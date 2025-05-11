@@ -1,0 +1,244 @@
+1
+00:00:00,000 --> 00:00:01,000
+Now let's talk about
+
+2
+00:00:01,000 --> 00:00:04,000
+what powers our EC2 instances which is an AMI,
+
+3
+00:00:04,000 --> 00:00:07,000
+so AMI stands for Amazon machine image
+
+4
+00:00:07,000 --> 00:00:11,000
+and they represent a customization of an EC2 instance.
+
+5
+00:00:11,000 --> 00:00:13,000
+So you can use AMIs you created by AWS
+
+6
+00:00:13,000 --> 00:00:17,000
+or you can customize it into your own and what is in an AMI?
+
+7
+00:00:17,000 --> 00:00:20,000
+Well we have our own software configuration,
+
+8
+00:00:20,000 --> 00:00:23,000
+we can define and set up the operating system,
+
+9
+00:00:23,000 --> 00:00:25,000
+we can set up any monitoring tool
+
+10
+00:00:25,000 --> 00:00:27,000
+and if we create our own AMI
+
+11
+00:00:27,000 --> 00:00:30,000
+we're going to get a faster boot time and configuration time
+
+12
+00:00:30,000 --> 00:00:32,000
+because all the software that we want to install
+
+13
+00:00:32,000 --> 00:00:34,000
+onto our EC2 instance
+
+14
+00:00:34,000 --> 00:00:37,000
+is going to be prepackaged through the AMI.
+
+15
+00:00:37,000 --> 00:00:39,000
+So we have to build our own AMIs
+
+16
+00:00:39,000 --> 00:00:42,000
+and they can be built for a specific region
+
+17
+00:00:42,000 --> 00:00:44,000
+and then they can be copied across region
+
+18
+00:00:44,000 --> 00:00:45,000
+if we wanted to use it
+
+19
+00:00:45,000 --> 00:00:48,000
+and leverage the AWS global infrastructure.
+
+20
+00:00:48,000 --> 00:00:52,000
+So we can launch EC2 instances from different kind of AMIs.
+
+21
+00:00:52,000 --> 00:00:54,000
+What we've been doing so far in this course
+
+22
+00:00:54,000 --> 00:00:58,000
+is to use a public AMI and these are provided by AWS.
+
+23
+00:00:58,000 --> 00:01:03,000
+So the Amazon Linux 2 AMI is a very popular AMI for AWS
+
+24
+00:01:03,000 --> 00:01:05,000
+and it was provided by AWS themselves
+
+25
+00:01:05,000 --> 00:01:08,000
+but we can create our own AMI
+
+26
+00:01:08,000 --> 00:01:11,000
+then therefore you have to make and maintain them yourself
+
+27
+00:01:11,000 --> 00:01:13,000
+there are tools obviously to automate this
+
+28
+00:01:13,000 --> 00:01:17,000
+but this is a task that you have to do as a cloud user
+
+29
+00:01:17,000 --> 00:01:20,000
+or finally you can launch an EC2 instance
+
+30
+00:01:20,000 --> 00:01:23,000
+from an AWS Marketplace AMI
+
+31
+00:01:23,000 --> 00:01:26,000
+which is an AMI that has been made by someone else
+
+32
+00:01:26,000 --> 00:01:29,000
+and potentially sold by someone else
+
+33
+00:01:29,000 --> 00:01:32,000
+so it is quite common to have vendors on AWS
+
+34
+00:01:32,000 --> 00:01:35,000
+to create their own AMIs or their own software
+
+35
+00:01:36,000 --> 00:01:39,000
+with a nice configuration and so on
+
+36
+00:01:39,000 --> 00:01:42,000
+and then they will sell it through the marketplace AMI
+
+37
+00:01:42,000 --> 00:01:45,000
+for you to buy it and to save some time.
+
+38
+00:01:45,000 --> 00:01:49,000
+And even you as a user you could create a business
+
+39
+00:01:49,000 --> 00:01:52,000
+of selling AMIs on the AWS marketplace,
+
+40
+00:01:52,000 --> 00:01:54,000
+this is something that some businesses do.
+
+41
+00:01:54,000 --> 00:01:57,000
+Okay so the AMI process from an EC2 instance,
+
+42
+00:01:57,000 --> 00:01:58,000
+how does it work?
+
+43
+00:01:58,000 --> 00:02:02,000
+Well we'll start an EC2 instance and we'll customize it.
+
+44
+00:02:02,000 --> 00:02:04,000
+Then we will stop the instance
+
+45
+00:02:04,000 --> 00:02:07,000
+to make sure the data integrity is correct,
+
+46
+00:02:07,000 --> 00:02:09,000
+then we can build an AMI from it
+
+47
+00:02:09,000 --> 00:02:12,000
+so this will also create EBS snapshots behind the scenes
+
+48
+00:02:12,000 --> 00:02:16,000
+and then finally we can launch instances from other AMIs
+
+49
+00:02:16,000 --> 00:02:17,000
+so this is what we'll be doing
+
+50
+00:02:17,000 --> 00:02:19,000
+in the demo and the next lecture.
+
+51
+00:02:19,000 --> 00:02:21,000
+So we have US-EAST-1A,
+
+52
+00:02:21,000 --> 00:02:24,000
+and we can create the same instance as US-EAST-1B,
+
+53
+00:02:24,000 --> 00:02:27,000
+so the process is we launch the instance in US-EAST-1A,
+
+54
+00:02:27,000 --> 00:02:29,000
+we're going to customize it
+
+55
+00:02:29,000 --> 00:02:31,000
+then we're going to create an AMI from it
+
+56
+00:02:31,000 --> 00:02:34,000
+this will be our custom AMI.
+
+57
+00:02:34,000 --> 00:02:35,000
+And then in US-EAST-1B
+
+58
+00:02:35,000 --> 00:02:38,000
+we will be able to launch from that AMI
+
+59
+00:02:38,000 --> 00:02:42,000
+and we'll effectively create a copy of our EC2 instance.
+
+60
+00:02:42,000 --> 00:02:43,000
+So I hope you're excited
+
+61
+00:02:43,000 --> 00:02:45,000
+and I will see you in the next lecture.
+

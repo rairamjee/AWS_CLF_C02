@@ -1,0 +1,152 @@
+1
+00:00:00,000 --> 00:00:03,000
+So let's summarize what we have learned in this section.
+
+2
+00:00:03,000 --> 00:00:05,000
+The first one around the EBS volumes,
+
+3
+00:00:05,000 --> 00:00:06,000
+they are network drives that are attached
+
+4
+00:00:06,000 --> 00:00:08,000
+to one EC2 instance at a time.
+
+5
+00:00:08,000 --> 00:00:11,000
+They're mapped to a specific Availability Zone
+
+6
+00:00:11,000 --> 00:00:15,000
+and we can use the EBS snapshot feature to do backups
+
+7
+00:00:15,000 --> 00:00:18,000
+or to be able to transfer the data from one EBS volume
+
+8
+00:00:18,000 --> 00:00:22,000
+across to an other Availability Zone.
+
+9
+00:00:22,000 --> 00:00:23,000
+We've seen about AMIs.
+
+10
+00:00:23,000 --> 00:00:26,000
+There are ready to use EC2 instances images, with
+
+11
+00:00:26,000 --> 00:00:27,000
+the customizations we want.
+
+12
+00:00:27,000 --> 00:00:30,000
+And if we want to automate the process of building an AMI
+
+13
+00:00:30,000 --> 00:00:33,000
+we can use the EC2 image builder service to
+
+14
+00:00:33,000 --> 00:00:36,000
+automatically build tests and distribute AMIs.
+
+15
+00:00:36,000 --> 00:00:38,000
+We've seen EC2 instance store, which is a way
+
+16
+00:00:38,000 --> 00:00:41,000
+for us to have a very high performance hardware disc
+
+17
+00:00:41,000 --> 00:00:44,000
+this time, attached to our EC2 instance.
+
+18
+00:00:44,000 --> 00:00:45,000
+But it is lost
+
+19
+00:00:45,000 --> 00:00:48,000
+in case our instances stopped or terminated.
+
+20
+00:00:48,000 --> 00:00:49,000
+If we wanted to have a network file system,
+
+21
+00:00:49,000 --> 00:00:51,000
+we would use the EFS service.
+
+22
+00:00:51,000 --> 00:00:52,000
+With EFS service,
+
+23
+00:00:52,000 --> 00:00:55,000
+we can get a NFS that we can attach
+
+24
+00:00:55,000 --> 00:00:57,000
+to hundreds of instances within the region.
+
+25
+00:00:57,000 --> 00:00:59,000
+So there is no AZ luck,
+
+26
+00:00:59,000 --> 00:01:00,000
+now it's at the region level.
+
+27
+00:01:00,000 --> 00:01:03,000
+And if you want to cost-optimize our EFS service,
+
+28
+00:01:03,000 --> 00:01:05,000
+we could use EFS-IA,
+
+29
+00:01:05,000 --> 00:01:08,000
+which allows us to move the files that are infrequently used
+
+30
+00:01:08,000 --> 00:01:11,000
+into a lower cost tier.
+
+31
+00:01:11,000 --> 00:01:14,000
+Finally, we've seen about FSx, FSx for Windows,
+
+32
+00:01:14,000 --> 00:01:17,000
+which is a way for us to get a network file system
+
+33
+00:01:17,000 --> 00:01:19,000
+for Windows servers
+
+34
+00:01:19,000 --> 00:01:21,000
+and FSx for Luster, which is
+
+35
+00:01:21,000 --> 00:01:23,000
+for us to perform high performance computing.
+
+36
+00:01:23,000 --> 00:01:27,000
+So HPC on a Linux file system.
+
+37
+00:01:27,000 --> 00:01:29,000
+So to say for this section, I hope you liked it
+
+38
+00:01:29,000 --> 00:01:31,000
+and that I will see you in the next section.
+

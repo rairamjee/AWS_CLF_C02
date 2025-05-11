@@ -1,0 +1,160 @@
+1
+00:00:00,000 --> 00:00:02,000
+So let's do a quick cleanup just to make sure
+
+2
+00:00:02,000 --> 00:00:04,000
+we have a clean slate and that we don't overpay anything
+
+3
+00:00:04,000 --> 00:00:06,000
+even though we are in the free tier.
+
+4
+00:00:06,000 --> 00:00:09,000
+So if you go to the EC2 Dashboard, you will see all
+
+5
+00:00:09,000 --> 00:00:11,000
+the resources running in your region.
+
+6
+00:00:11,000 --> 00:00:12,000
+So I have two running instances.
+
+7
+00:00:12,000 --> 00:00:14,000
+I'm going to open this in new tab.
+
+8
+00:00:14,000 --> 00:00:17,000
+Four volumes and then four key pairs.
+
+9
+00:00:17,000 --> 00:00:18,000
+You can leave it as is.
+
+10
+00:00:18,000 --> 00:00:19,000
+It doesn't cost you any money, no matter what.
+
+11
+00:00:19,000 --> 00:00:22,000
+Snapshots, I have two so I will open this in new tab.
+
+12
+00:00:22,000 --> 00:00:24,000
+And then finally, security group.
+
+13
+00:00:24,000 --> 00:00:26,000
+As well, it don't cost you any money so I'm going
+
+14
+00:00:26,000 --> 00:00:28,000
+to leave them as is.
+
+15
+00:00:28,000 --> 00:00:31,000
+So for our EC2 instances, you can take them all,
+
+16
+00:00:31,000 --> 00:00:33,000
+right-click, and then terminate them.
+
+17
+00:00:33,000 --> 00:00:34,000
+See, this is very easy.
+
+18
+00:00:34,000 --> 00:00:35,000
+This is the cloud.
+
+19
+00:00:35,000 --> 00:00:38,000
+Then for the volumes, we have some root EBS volumes
+
+20
+00:00:38,000 --> 00:00:41,000
+that are going to be deleted as we terminate our instances.
+
+21
+00:00:41,000 --> 00:00:45,000
+But for these two EBS volumes, I'm going to delete them
+
+22
+00:00:45,000 --> 00:00:47,000
+as well manually, okay.
+
+23
+00:00:47,000 --> 00:00:50,000
+And finally, for the snapshots, I can delete
+
+24
+00:00:50,000 --> 00:00:51,000
+the snapshot right away.
+
+25
+00:00:51,000 --> 00:00:54,000
+So I can take these two things, do action,
+
+26
+00:00:54,000 --> 00:00:56,000
+delete the snapshots, yes.
+
+27
+00:00:56,000 --> 00:00:59,000
+And then it says this one is not being able to be deleted
+
+28
+00:00:59,000 --> 00:01:01,000
+because it is in use by an AMI.
+
+29
+00:01:01,000 --> 00:01:05,000
+So I will say okay, go to AMI on the left-hand side.
+
+30
+00:01:05,000 --> 00:01:09,000
+I'm going to delete the AMI so I can just deregister it.
+
+31
+00:01:09,000 --> 00:01:12,000
+I say yes, I want to be deregistering this AMI.
+
+32
+00:01:12,000 --> 00:01:16,000
+And back into our snapshots, now I'm able to get this one,
+
+33
+00:01:16,000 --> 00:01:19,000
+delete it, and say yes. And now we should be good to go.
+
+34
+00:01:19,000 --> 00:01:22,000
+So if I look at instances, all terminated.
+
+35
+00:01:22,000 --> 00:01:24,000
+If I look at EBS volumes, none of them.
+
+36
+00:01:24,000 --> 00:01:27,000
+And snapshots, empty, and AMI, empty.
+
+37
+00:01:27,000 --> 00:01:28,000
+Okay, that's it for the cleanup.
+
+38
+00:01:28,000 --> 00:01:30,000
+I'm going to refresh this and as we can see,
+
+39
+00:01:30,000 --> 00:01:32,000
+we are good to go.
+
+40
+00:01:32,000 --> 00:01:34,000
+And I will see you in the next lecture.
+

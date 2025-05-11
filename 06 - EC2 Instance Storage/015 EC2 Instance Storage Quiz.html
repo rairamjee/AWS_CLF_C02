@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 18796514, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>EBS&nbsp;Volume</p>", "<p>EC2 Instance Store</p>", "<p>EBS&nbsp;Snapshots</p>", "<p>EFS</p>"], "question": "<p>Which EC2 Storage would you use to create a shared network file system for your EC2 Instances?</p>", "relatedLectureIds": ["20055824"], "feedbacks": ["An Amazon EBS volume is a durable, block-level storage device that you can attach to one instance at a time. ", "An EC2 Instance Store provides temporary block-level storage for your instance. It is not a network file system.", "EBS Snapshots are backup of your EBS volume at a point in time, not a shared network file system.", "Amazon EFS is a fully managed service that makes it easy to set up, scale, and cost-optimize file storage in the Amazon Cloud."]}, "correct_response": ["d"], "section": "", "question_plain": "Which EC2 Storage would you use to create a shared network file system for your EC2 Instances?", "related_lectures": [{"_class": "lecture", "id": 20055824, "title": "EFS Overview", "created": "2020-05-25T18:10:00Z", "is_published": true, "asset": {"_class": "asset", "id": 40630530, "asset_type": "Video", "title": "CCP_-_EFS_-_Overview_v3.mp4", "created": "2022-04-06T23:39:44Z"}, "object_index": 59, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055824"}]}, {"_class": "assessment", "id": 28715466, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>AMI</p>", "<p>EC2 Image Builder</p>", "<p>EBS Snapshots</p>", "<p>IAM</p>"], "question": "<p>Which service can be used to automate image management processes?</p>", "relatedLectureIds": ["24682456"], "feedbacks": ["Amazon Machine Image (AMI) provides the information required to launch an instance, but it is not an automated image management process service. ", "EC2 Image Builder is an automated pipeline for the creation, maintenance, validation, sharing, and deployment of Linux or Windows images for use on AWS and on-premises.", "EBS Snapshots are backups of your EBS Volume data at a point in time, but they are not an automated image management process service. ", "IAM is used to securely control access to AWS services and resources. It is not used to automate image management processes."]}, "correct_response": ["b"], "section": "", "question_plain": "Which service can be used to automate image management processes?", "related_lectures": [{"_class": "lecture", "id": 24682456, "title": "EC2 Image Builder Overview", "created": "2021-01-31T19:39:37Z", "is_published": true, "asset": {"_class": "asset", "id": 54587256, "asset_type": "Video", "title": "CCP_-_EBS_-_EC2_Image_Builder_v3.mp4", "created": "2024-02-11T17:52:51Z"}, "object_index": 57, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/24682456"}]}, {"_class": "assessment", "id": 34449002, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": ["26623482"], "feedbacks": ["Amazon EFS is a fully managed service that makes it easy to set up, scale, and cost-optimize file storage in the Amazon Cloud. It is not a Microsoft Windows native.", "Amazon FSx makes it easy and cost effective to launch and run popular file systems that are fully managed by AWS. It comes in two offerings: FSx for Windows File Server (used for business applications), and FSx for Lustre (used for high-performance computing).", "EBS is an easy to use, high performance block storage service for EC2 instances. It is not a file system."], "answers": ["<p>EFS</p>", "<p>FSx</p>", "<p>EBS</p>"], "question": "<p>Which of the following is a fully managed native Microsoft Windows file system?</p>"}, "correct_response": ["b"], "section": "", "question_plain": "Which of the following is a fully managed native Microsoft Windows file system?", "related_lectures": [{"_class": "lecture", "id": 26623482, "title": "Amazon FSx Overview", "created": "2021-05-21T07:03:15Z", "is_published": true, "asset": {"_class": "asset", "id": 37288534, "asset_type": "Video", "title": "CCP_-_FSx_-_Overview_v2.mp4", "created": "2021-11-04T13:39:57Z"}, "object_index": 61, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/26623482"}]}, {"_class": "assessment", "id": 18795614, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Add your own software license</p>", "<p>Add your own configuration</p>", "<p>Add your own operating-system</p>", "<p>Add your own IP&nbsp;addresses</p>"], "question": "<p>What are AMIs NOT used for?</p>", "relatedLectureIds": ["20055810"], "feedbacks": ["You can use AMIs to add your own software license.", "You can use AMIs to add your own configuration.", "You can use AMIs to add your own operating-system.", "You cannot use AMIs to add your IP addresses. IP addresses are added to an instance as you create it."]}, "correct_response": ["d"], "section": "", "question_plain": "What are AMIs NOT used for?", "related_lectures": [{"_class": "lecture", "id": 20055810, "title": "AMI Overview", "created": "2020-05-25T18:09:41Z", "is_published": true, "asset": {"_class": "asset", "id": 25143748, "asset_type": "Video", "title": "CCP - EC2 - AMI Overview.mp4", "created": "2020-06-01T19:07:07Z"}, "object_index": 55, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055810"}]}, {"_class": "assessment", "id": 18795596, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>True</p>", "<p>False</p>"], "question": "<p>EBS&nbsp;Volumes CANNOT be attached to multiple EC2 instances at a time.</p>", "relatedLectureIds": ["20055762"], "feedbacks": ["EBS\u00a0Volumes can be attached to only one EC2 Instance at a time, but EC2 Instances can have multiple EBS Volumes attached to them.", "EBS\u00a0Volumes can be attached to only one EC2 Instance, but EC2 Instances can have multiple EBS Volumes attached to them."]}, "correct_response": ["a"], "section": "", "question_plain": "EBS&nbsp;Volumes CANNOT be attached to multiple EC2 instances at a time.", "related_lectures": [{"_class": "lecture", "id": 20055762, "title": "EBS Overview", "created": "2020-05-25T18:08:15Z", "is_published": true, "asset": {"_class": "asset", "id": 33694472, "asset_type": "Video", "title": "CCP - EBS - Overview v2.mp4", "created": "2021-05-21T06:46:42Z"}, "object_index": 50, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055762"}]}, {"_class": "assessment", "id": 18795584, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>True</p>", "<p>False</p>"], "question": "<p>An EBS&nbsp;Volume is a network drive you can attach to your instances while they run, so your instances' data persist even after their termination.</p>", "relatedLectureIds": ["20055762"], "feedbacks": ["EBS Volumes allows instances' data to persist even after their termination.", "EBS Volumes allows instances' data to persist even after their termination. EC2 Instance Stores do not keep data after termination."]}, "correct_response": ["a"], "section": "", "question_plain": "An EBS&nbsp;Volume is a network drive you can attach to your instances while they run, so your instances' data persist even after their termination.", "related_lectures": [{"_class": "lecture", "id": 20055762, "title": "EBS Overview", "created": "2020-05-25T18:08:15Z", "is_published": true, "asset": {"_class": "asset", "id": 33694472, "asset_type": "Video", "title": "CCP - EBS - Overview v2.mp4", "created": "2021-05-21T06:46:42Z"}, "object_index": 50, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055762"}]}, {"_class": "assessment", "id": 18796502, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>It is not good to use as a disk to cache content</p>", "<p>It has a better I/O performance, but the data is lost if the EC2 Instance is terminated</p>", "<p>Your data is always safe with EC2 Instance Store</p>"], "question": "<p>Which statement is CORRECT regarding EC2 Instance Store?</p>", "relatedLectureIds": ["20055816"], "feedbacks": ["EC2 Instance Stores are good to cache content.", "EC2 Instance Store has a better I/O performance, but data is lost if: the EC2 instance is stopped or terminated, or when the underlying disk drive fails.", "Data can be lost if hardware fails, and data does not persist after EC2 Instance Stores are stopped."]}, "correct_response": ["b"], "section": "", "question_plain": "Which statement is CORRECT regarding EC2 Instance Store?", "related_lectures": [{"_class": "lecture", "id": 20055816, "title": "EC2 Instance Store", "created": "2020-05-25T18:09:53Z", "is_published": true, "asset": {"_class": "asset", "id": 25143810, "asset_type": "Video", "title": "CCP - EC2 - Instance Store.mp4", "created": "2020-06-01T19:07:07Z"}, "object_index": 58, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055816"}]}, {"_class": "assessment", "id": 18795610, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>The operating-system on an EC2 Instance</p>", "<p>A backup of your EBS Volume at a point in time</p>", "<p>The amount of CPU and RAM of an EC2 Instance</p>"], "question": "<p>What is an EBS&nbsp;Snapshot?</p>", "relatedLectureIds": ["20055798"], "feedbacks": ["The operating-system on an EC2 Instance is just called an operating-system.", "EBS Snapshots are used to backup data on your EBS Volumes at a point in time.", "These are possible characteristics of the Instance Type."]}, "correct_response": ["b"], "section": "", "question_plain": "What is an EBS&nbsp;Snapshot?", "related_lectures": [{"_class": "lecture", "id": 20055798, "title": "EBS Snapshots Overview", "created": "2020-05-25T18:09:28Z", "is_published": true, "asset": {"_class": "asset", "id": 40630544, "asset_type": "Video", "title": "CCP_-_EBS_-_Snapshots_v2.mp4", "created": "2022-04-06T23:39:47Z"}, "object_index": 53, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055798"}]}, {"_class": "assessment", "id": 18796306, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Public AMIs</p>", "<p>My own AMIs</p>", "<p>AWS&nbsp;Marketplace AMIs</p>"], "question": "<p>Where can you find a third party's AMI so you can use it to launch your EC2 Instance?</p>", "relatedLectureIds": ["20055810"], "feedbacks": ["This is to find AWS provided AMIs.", "This is to make and maintain your AMIs yourself.", "You can use AWS Marketplace AMIs to use someone else's AMI."]}, "correct_response": ["c"], "section": "", "question_plain": "Where can you find a third party's AMI so you can use it to launch your EC2 Instance?", "related_lectures": [{"_class": "lecture", "id": 20055810, "title": "AMI Overview", "created": "2020-05-25T18:09:41Z", "is_published": true, "asset": {"_class": "asset", "id": 25143748, "asset_type": "Video", "title": "CCP - EC2 - AMI Overview.mp4", "created": "2020-06-01T19:07:07Z"}, "object_index": 55, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055810"}]}, {"_class": "assessment", "id": 18795592, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>A&nbsp;region</p>", "<p>A data center</p>", "<p>An edge location</p>", "<p>An availability zone</p>"], "question": "<p>What is an EBS&nbsp;Volume tied to?</p>", "relatedLectureIds": ["20055762"], "feedbacks": ["EBS Volumes are not tied to a region.", "EBS Volumes are not tied to a data center.", "EBS Volumes are not tied to an edge location.", "EBS Volumes are tied to only one availability zone."]}, "correct_response": ["d"], "section": "", "question_plain": "What is an EBS&nbsp;Volume tied to?", "related_lectures": [{"_class": "lecture", "id": 20055762, "title": "EBS Overview", "created": "2020-05-25T18:08:15Z", "is_published": true, "asset": {"_class": "asset", "id": 33694472, "asset_type": "Video", "title": "CCP - EBS - Overview v2.mp4", "created": "2021-05-21T06:46:42Z"}, "object_index": 50, "url": "/course/aws-certified-cloud-practitioner-new/learn/lecture/20055762"}]}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:02,000
+Okay, so now let's talk about Amazon FSx,
+
+2
+00:00:02,000 --> 00:00:05,000
+which is a managed service to get third-party
+
+3
+00:00:05,000 --> 00:00:07,000
+high-performance file systems on AWS.
+
+4
+00:00:07,000 --> 00:00:10,000
+So in case you don't wanna use EFS or S3,
+
+5
+00:00:10,000 --> 00:00:11,000
+and you want something else, then you can use FSX
+
+6
+00:00:11,000 --> 00:00:14,000
+to manage these file systems.
+
+7
+00:00:14,000 --> 00:00:15,000
+So you have three offerings today.
+
+8
+00:00:15,000 --> 00:00:18,000
+You have FSx for Lustre, FSx for Windows File Server,
+
+9
+00:00:18,000 --> 00:00:20,000
+and FSx for NetApp ONTAP.
+
+10
+00:00:20,000 --> 00:00:23,000
+And they can add file systems over time
+
+11
+00:00:23,000 --> 00:00:24,000
+to the FSx service, I'm pretty sure,
+
+12
+00:00:24,000 --> 00:00:26,000
+but they will not update this video
+
+13
+00:00:26,000 --> 00:00:28,000
+unless you need to know about the other ones.
+
+14
+00:00:28,000 --> 00:00:30,000
+So the two most important ones are going to be
+
+15
+00:00:30,000 --> 00:00:33,000
+FSx for Lustre, and FSx for Windows File Server,
+
+16
+00:00:33,000 --> 00:00:35,000
+and this is what is covered in this lesson.
+
+17
+00:00:36,000 --> 00:00:40,000
+The first one is Amazon FSx for Windows File Server,
+
+18
+00:00:40,000 --> 00:00:42,000
+which is a fully managed, highly reliable and scalable
+
+19
+00:00:42,000 --> 00:00:45,000
+Windows native shared file system
+
+20
+00:00:45,000 --> 00:00:46,000
+built on Windows File Server.
+
+21
+00:00:46,000 --> 00:00:49,000
+So this is meant for Windows instances.
+
+22
+00:00:49,000 --> 00:00:52,000
+So the way you do it is that deploy the FSx
+
+23
+00:00:52,000 --> 00:00:54,000
+usually across two availability zones,
+
+24
+00:00:54,000 --> 00:00:55,000
+and then there is support
+
+25
+00:00:55,000 --> 00:00:57,000
+for all the Windows native protocols,
+
+26
+00:00:57,000 --> 00:01:01,000
+such as the SMB protocol and Windows NTFS,
+
+27
+00:01:01,000 --> 00:01:03,000
+which allows you to mount this file system
+
+28
+00:01:03,000 --> 00:01:04,000
+onto your Windows machines.
+
+29
+00:01:04,000 --> 00:01:06,000
+And so if you look at your corporate data center
+
+30
+00:01:06,000 --> 00:01:08,000
+and you have a Windows Client, for example,
+
+31
+00:01:08,000 --> 00:01:12,000
+over SMB, it's able to access the Windows file server.
+
+32
+00:01:12,000 --> 00:01:15,000
+But also if you had EC2 instances that are Windows based,
+
+33
+00:01:15,000 --> 00:01:17,000
+and then they could also might as well
+
+34
+00:01:17,000 --> 00:01:18,000
+access this Windows file server.
+
+35
+00:01:18,000 --> 00:01:22,000
+So Amazon FSx is the way to deploy this Windows file server
+
+36
+00:01:22,000 --> 00:01:26,000
+that leverages the SMB protocol and Windows NTFS.
+
+37
+00:01:26,000 --> 00:01:29,000
+Because this is also a Microsoft type of offering,
+
+38
+00:01:29,000 --> 00:01:32,000
+there is integration with Microsoft Active Directory
+
+39
+00:01:32,000 --> 00:01:37,000
+for user security and Windows file server in Amazon FSx
+
+40
+00:01:37,000 --> 00:01:39,000
+can be accessed from AWS directly,
+
+41
+00:01:39,000 --> 00:01:41,000
+or as you can see on this diagram
+
+42
+00:01:41,000 --> 00:01:44,000
+from your on-premises infrastructure.
+
+43
+00:01:44,000 --> 00:01:47,000
+Now, the second flavor of Amazon FSx you have in AWS
+
+44
+00:01:47,000 --> 00:01:50,000
+is called Amazon FSx for Lustre.
+
+45
+00:01:50,000 --> 00:01:52,000
+And you need to remember that this says to have
+
+46
+00:01:52,000 --> 00:01:55,000
+a fully managed, high-performance and scalable file storage
+
+47
+00:01:55,000 --> 00:01:57,000
+for high performance computing.
+
+48
+00:01:57,000 --> 00:01:59,000
+So whenever you see storage for HPC,
+
+49
+00:01:59,000 --> 00:02:03,000
+so high-performance computing, thinks FSx for Lustre.
+
+50
+00:02:03,000 --> 00:02:05,000
+Why, well Lustre, there is derived from the name
+
+51
+00:02:05,000 --> 00:02:08,000
+Linux and cluster, so put together it's Lustre.
+
+52
+00:02:08,000 --> 00:02:10,000
+And so imagine cluster like processing
+
+53
+00:02:10,000 --> 00:02:12,000
+this kind of things, maybe it's a way for you to remember
+
+54
+00:02:12,000 --> 00:02:14,000
+what Amazon FSx for Lustre is.
+
+55
+00:02:14,000 --> 00:02:17,000
+This allows you to run a lot of use cases
+
+56
+00:02:17,000 --> 00:02:20,000
+for high performance computing, such as machine learning,
+
+57
+00:02:20,000 --> 00:02:23,000
+analytics, video processing, financial modeling,
+
+58
+00:02:23,000 --> 00:02:25,000
+and it scales to extremely high traffics
+
+59
+00:02:25,000 --> 00:02:27,000
+in terms of hundreds of gigabytes per second
+
+60
+00:02:27,000 --> 00:02:31,000
+of data exchanged, millions of IO operations per second,
+
+61
+00:02:31,000 --> 00:02:33,000
+sub milliseconds latency,
+
+62
+00:02:33,000 --> 00:02:35,000
+so it's really a high-performance file system.
+
+63
+00:02:35,000 --> 00:02:37,000
+So the way it works is that Amazon FSx for Lustre
+
+64
+00:02:37,000 --> 00:02:40,000
+can be connected either to your corporate data center
+
+65
+00:02:40,000 --> 00:02:44,000
+or to your compute instances directly within AWS.
+
+66
+00:02:44,000 --> 00:02:46,000
+And then in the backend, Amazon FSx for Lustre
+
+67
+00:02:46,000 --> 00:02:48,000
+is actually storing your data,
+
+68
+00:02:48,000 --> 00:02:52,000
+possibly onto an Amazon S3 bucket.
+
+69
+00:02:52,000 --> 00:02:54,000
+So that's it, that's all you need to know for Amazon FSx
+
+70
+00:02:54,000 --> 00:02:55,000
+there is no easy hands-on to do it.
+
+71
+00:02:55,000 --> 00:02:58,000
+So we'll skip that, but just remember the two flavors
+
+72
+00:02:58,000 --> 00:03:00,000
+of Amazon FSx going into the exam,
+
+73
+00:03:00,000 --> 00:03:01,000
+and you should be good to go.
+
+74
+00:03:01,000 --> 00:03:04,000
+So that's it, I will see you in the next lecture.
+

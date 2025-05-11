@@ -1,0 +1,272 @@
+1
+00:00:00,000 --> 00:00:02,000
+So now let's talk about EBS snapshots.
+
+2
+00:00:02,000 --> 00:00:05,000
+So you can take your EBS volumes and make a snapshot,
+
+3
+00:00:05,000 --> 00:00:06,000
+which is also called a backup,
+
+4
+00:00:06,000 --> 00:00:09,000
+at any point of time that you wanted to.
+
+5
+00:00:09,000 --> 00:00:11,000
+The idea is that you will be able
+
+6
+00:00:11,000 --> 00:00:12,000
+to back up the state of it,
+
+7
+00:00:12,000 --> 00:00:15,000
+and even if the EBS volume is terminated later on,
+
+8
+00:00:15,000 --> 00:00:17,000
+you could restore it from that backup.
+
+9
+00:00:17,000 --> 00:00:19,000
+Now to make a backup, it is not necessary
+
+10
+00:00:19,000 --> 00:00:22,000
+to detach the volume prior to doing the backup,
+
+11
+00:00:22,000 --> 00:00:24,000
+but it is recommended just to make sure
+
+12
+00:00:24,000 --> 00:00:27,000
+that everything is clean on your EBS volume.
+
+13
+00:00:27,000 --> 00:00:28,000
+And why do we do snapshots?
+
+14
+00:00:28,000 --> 00:00:30,000
+Well, we can obviously restore them
+
+15
+00:00:30,000 --> 00:00:32,000
+but we can also copy snapshots
+
+16
+00:00:32,000 --> 00:00:34,000
+across availability zones or regions,
+
+17
+00:00:34,000 --> 00:00:37,000
+and the idea is that you would be able to transfer
+
+18
+00:00:37,000 --> 00:00:39,000
+some of your data in a different region on AWS
+
+19
+00:00:39,000 --> 00:00:42,000
+to leverage the global infrastructure.
+
+20
+00:00:42,000 --> 00:00:44,000
+So if we look at US-EAST-1A,
+
+21
+00:00:44,000 --> 00:00:49,000
+and we want to transfer an EBS volume to US-EAST-1B,
+
+22
+00:00:49,000 --> 00:00:51,000
+the way we do it is that we would have the EBS volume
+
+23
+00:00:51,000 --> 00:00:56,000
+attached to the EC2 instance, and then we would snapshot it.
+
+24
+00:00:56,000 --> 00:00:59,000
+So maybe we would stop the EC2 instance ahead of time
+
+25
+00:00:59,000 --> 00:01:00,000
+to make sure the snapshot is clean
+
+26
+00:01:00,000 --> 00:01:02,000
+or we could just do it on the fly.
+
+27
+00:01:02,000 --> 00:01:05,000
+It is really up to you and based on how you have programmed
+
+28
+00:01:05,000 --> 00:01:07,000
+your EC2 instance.
+
+29
+00:01:07,000 --> 00:01:10,000
+Now the EBS snapshots exist in your region.
+
+30
+00:01:10,000 --> 00:01:12,000
+And that EBS snapshot can be used
+
+31
+00:01:12,000 --> 00:01:17,000
+to restore a new EBS volume in another availability zone.
+
+32
+00:01:18,000 --> 00:01:19,000
+And then now that this is done,
+
+33
+00:01:19,000 --> 00:01:21,000
+we can attach the new EBS volume
+
+34
+00:01:21,000 --> 00:01:24,000
+to an EC2 instance in US-EAST-1B.
+
+35
+00:01:24,000 --> 00:01:25,000
+And there we go.
+
+36
+00:01:25,000 --> 00:01:28,000
+We have successfully and effectively transferred
+
+37
+00:01:28,000 --> 00:01:31,000
+an EBS volume through a snapshot across AZ.
+
+38
+00:01:31,000 --> 00:01:34,000
+So some features need to know about for EBS Snapshots
+
+39
+00:01:34,000 --> 00:01:37,000
+is the first one, an EBS snapshot archive.
+
+40
+00:01:37,000 --> 00:01:39,000
+So it allows you to move your snapshots
+
+41
+00:01:39,000 --> 00:01:43,000
+to another storage tier called an archive tier,
+
+42
+00:01:43,000 --> 00:01:45,000
+and that tier is 75% cheaper.
+
+43
+00:01:45,000 --> 00:01:47,000
+So your snapshot is going to be moved,
+
+44
+00:01:47,000 --> 00:01:50,000
+you know, manually or whatever, however you set
+
+45
+00:01:50,000 --> 00:01:51,000
+to the archive tier.
+
+46
+00:01:51,000 --> 00:01:53,000
+But if you have it in the archive,
+
+47
+00:01:53,000 --> 00:01:56,000
+it takes you between 24 to 72 hours
+
+48
+00:01:56,000 --> 00:01:58,000
+to restore from the archive.
+
+49
+00:01:58,000 --> 00:01:59,000
+So these are for snapshot
+
+50
+00:01:59,000 --> 00:02:02,000
+that are not very important to you
+
+51
+00:02:02,000 --> 00:02:04,000
+to restore it in a rush, okay,
+
+52
+00:02:04,000 --> 00:02:07,000
+but you wanna save some cost on them.
+
+53
+00:02:07,000 --> 00:02:10,000
+The second feature is around recycle bin for EBS snapshots.
+
+54
+00:02:10,000 --> 00:02:13,000
+So by default, when you delete snapshots, they're gone.
+
+55
+00:02:13,000 --> 00:02:15,000
+But you can set up a recycle bin,
+
+56
+00:02:15,000 --> 00:02:17,000
+and the recycle bin will have all the snapshots
+
+57
+00:02:17,000 --> 00:02:19,000
+that are deleted.
+
+58
+00:02:19,000 --> 00:02:21,000
+And then after a while, maybe you can specify
+
+59
+00:02:21,000 --> 00:02:23,000
+from one day to one year,
+
+60
+00:02:23,000 --> 00:02:25,000
+the snapshots are gone from the bin.
+
+61
+00:02:25,000 --> 00:02:28,000
+So on deleting the snapshots, it would go into recycle bin.
+
+62
+00:02:28,000 --> 00:02:30,000
+And you may have, for example, one year
+
+63
+00:02:30,000 --> 00:02:32,000
+to recover the snapshots, which allows you
+
+64
+00:02:32,000 --> 00:02:35,000
+to protect yourself against accidental deletion.
+
+65
+00:02:35,000 --> 00:02:36,000
+Okay.
+
+66
+00:02:36,000 --> 00:02:37,000
+That's it for this lecture.
+
+67
+00:02:37,000 --> 00:02:37,000
+I hope you liked it
+
+68
+00:02:37,000 --> 00:02:39,000
+and I will see you in the next lecture.
+
