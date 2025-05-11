@@ -1,0 +1,612 @@
+1
+00:00:00,000 --> 00:00:02,000
+Welcome to the first section of this course
+
+2
+00:00:02,000 --> 00:00:04,000
+in which I will introduce you the Cloud
+
+3
+00:00:04,000 --> 00:00:05,000
+and the Cloud Computing.
+
+4
+00:00:05,000 --> 00:00:07,000
+So this section is not going to be hands-on,
+
+5
+00:00:07,000 --> 00:00:09,000
+it's just some theory and some slight,
+
+6
+00:00:09,000 --> 00:00:12,000
+but hopefully it will put some context into
+
+7
+00:00:12,000 --> 00:00:14,000
+why the Cloud is useful and how it works.
+
+8
+00:00:14,000 --> 00:00:17,000
+So let's go back to the very basics.
+
+9
+00:00:17,000 --> 00:00:18,000
+How do websites work?
+
+10
+00:00:18,000 --> 00:00:21,000
+Well we have a server hosted somewhere,
+
+11
+00:00:21,000 --> 00:00:22,000
+and we, as a web browser,
+
+12
+00:00:22,000 --> 00:00:27,000
+want to get access to that server to visualize a websites.
+
+13
+00:00:27,000 --> 00:00:30,000
+What we are going to do as a client is use a network.
+
+14
+00:00:30,000 --> 00:00:33,000
+A network between ourselves and the server,
+
+15
+00:00:33,000 --> 00:00:36,000
+and the client will find the network and will use network
+
+16
+00:00:36,000 --> 00:00:40,000
+to route the packets, the data into the server,
+
+17
+00:00:40,000 --> 00:00:42,000
+then the server will reply to us,
+
+18
+00:00:42,000 --> 00:00:45,000
+and we will get the response, and we can view a website.
+
+19
+00:00:45,000 --> 00:00:47,000
+Obviously that is very simplified,
+
+20
+00:00:47,000 --> 00:00:48,000
+but that gives you an idea.
+
+21
+00:00:48,000 --> 00:00:50,000
+Now for the clients to find the server
+
+22
+00:00:50,000 --> 00:00:52,000
+and the server to find the clients,
+
+23
+00:00:52,000 --> 00:00:54,000
+you need to have IP addresses.
+
+24
+00:00:54,000 --> 00:00:57,000
+So a clients have IP addresses
+
+25
+00:00:57,000 --> 00:01:00,000
+and a server also have an IP address.
+
+26
+00:01:00,000 --> 00:01:02,000
+And so the idea is that when you use an IP address,
+
+27
+00:01:02,000 --> 00:01:05,000
+you can send a request to wherever you want
+
+28
+00:01:05,000 --> 00:01:07,000
+to the server you want,
+
+29
+00:01:07,000 --> 00:01:10,000
+and the server can know how to find you back.
+
+30
+00:01:10,000 --> 00:01:12,000
+This is very similar to when you are
+
+31
+00:01:12,000 --> 00:01:14,000
+writing some letters to your friend.
+
+32
+00:01:14,000 --> 00:01:16,000
+For example, you would write a letter,
+
+33
+00:01:16,000 --> 00:01:20,000
+and that would be your data, and you would be the client,
+
+34
+00:01:20,000 --> 00:01:23,000
+then when you send the letter you put it in your mailbox,
+
+35
+00:01:23,000 --> 00:01:26,000
+and then the network will be the network of the post office,
+
+36
+00:01:26,000 --> 00:01:28,000
+then the post office will use network
+
+37
+00:01:28,000 --> 00:01:30,000
+and the address you put on the letter
+
+38
+00:01:30,000 --> 00:01:34,000
+to route your letter to the destination,
+
+39
+00:01:34,000 --> 00:01:36,000
+which is, in this case, the server,
+
+40
+00:01:36,000 --> 00:01:39,000
+and then if your correspondent wants to reply you back,
+
+41
+00:01:39,000 --> 00:01:42,000
+they can use the address you put on the back of the envelope
+
+42
+00:01:42,000 --> 00:01:44,000
+to write you back, and again,
+
+43
+00:01:44,000 --> 00:01:47,000
+use the same network to get the letter back to you.
+
+44
+00:01:47,000 --> 00:01:52,000
+So servers are just like the network of your mail.
+
+45
+00:01:52,000 --> 00:01:55,000
+Hopefully that's a good analogy.
+
+46
+00:01:55,000 --> 00:01:57,000
+So what is in a server?
+
+47
+00:01:57,000 --> 00:02:00,000
+Well a server is going to contain a CPU,
+
+48
+00:02:00,000 --> 00:02:03,000
+and a CPU is a little piece
+
+49
+00:02:03,000 --> 00:02:05,000
+that will be doing some computations,
+
+50
+00:02:05,000 --> 00:02:07,000
+it will be very helpful
+
+51
+00:02:07,000 --> 00:02:09,000
+to do some calculations and find results,
+
+52
+00:02:09,000 --> 00:02:13,000
+and then, your server also needs RAM, or memory.
+
+53
+00:02:13,000 --> 00:02:15,000
+This is going to be very, very fast memory,
+
+54
+00:02:15,000 --> 00:02:18,000
+which will allow us to store information
+
+55
+00:02:18,000 --> 00:02:19,000
+and retrieve it very quickly.
+
+56
+00:02:19,000 --> 00:02:24,000
+So when we have a CPU and a memory bar, what do we get?
+
+57
+00:02:24,000 --> 00:02:26,000
+Well we get a brain.
+
+58
+00:02:26,000 --> 00:02:28,000
+Think of your brain.
+
+59
+00:02:28,000 --> 00:02:32,000
+When you are thinking, you are actually making computations,
+
+60
+00:02:32,000 --> 00:02:34,000
+very complicated ones, but they are computations,
+
+61
+00:02:34,000 --> 00:02:37,000
+but then you need to retain some information,
+
+62
+00:02:37,000 --> 00:02:39,000
+and again, we have memories
+
+63
+00:02:39,000 --> 00:02:41,000
+and these memories are in our brain,
+
+64
+00:02:41,000 --> 00:02:45,000
+so if we think of the CPU and the RAM together,
+
+65
+00:02:45,000 --> 00:02:47,000
+they sort of look like a brain.
+
+66
+00:02:47,000 --> 00:02:48,000
+Now we also need to have
+
+67
+00:02:48,000 --> 00:02:51,000
+some more long-term storage of data.
+
+68
+00:02:51,000 --> 00:02:53,000
+Obviously it's still in our brain as humans,
+
+69
+00:02:53,000 --> 00:02:55,000
+but in computers, we have included
+
+70
+00:02:55,000 --> 00:02:59,000
+some special storage to store data, for example, files,
+
+71
+00:02:59,000 --> 00:03:01,000
+and then if we want to store the data
+
+72
+00:03:01,000 --> 00:03:04,000
+in a more structured way, we're going to use a database,
+
+73
+00:03:04,000 --> 00:03:08,000
+and a database is going to be data formatted in a way
+
+74
+00:03:08,000 --> 00:03:10,000
+that we can easily search it and query it.
+
+75
+00:03:10,000 --> 00:03:12,000
+Finally in the server,
+
+76
+00:03:12,000 --> 00:03:14,000
+we're also going to have some networking aspect.
+
+77
+00:03:14,000 --> 00:03:17,000
+So there's going to be the routers, switch, DNS servers,
+
+78
+00:03:17,000 --> 00:03:19,000
+and don't worry, all these terms,
+
+79
+00:03:19,000 --> 00:03:21,000
+we'll be seeing them later on in this course.
+
+80
+00:03:21,000 --> 00:03:26,000
+So in the server, we an aspect of compute, memory, storage,
+
+81
+00:03:26,000 --> 00:03:28,000
+maybe your server sometimes is a database,
+
+82
+00:03:28,000 --> 00:03:30,000
+and we have a networking aspect.
+
+83
+00:03:30,000 --> 00:03:32,000
+All these things are gonna super important going forward
+
+84
+00:03:32,000 --> 00:03:35,000
+because the cloud is going to be giving these things
+
+85
+00:03:35,000 --> 00:03:37,000
+for us on demand.
+
+86
+00:03:37,000 --> 00:03:39,000
+So if we just want to define
+
+87
+00:03:39,000 --> 00:03:41,000
+a little bit of IT terminology before we get started,
+
+88
+00:03:41,000 --> 00:03:45,000
+the network is a bunch of cables, routers, and servers
+
+89
+00:03:45,000 --> 00:03:47,000
+that are going to be connected with each other,
+
+90
+00:03:47,000 --> 00:03:50,000
+and the router is a specific device
+
+91
+00:03:50,000 --> 00:03:51,000
+that will forward the data packets
+
+92
+00:03:51,000 --> 00:03:54,000
+between computer in the networks, and they will know
+
+93
+00:03:54,000 --> 00:03:56,000
+where to send your packets on the internet,
+
+94
+00:03:56,000 --> 00:04:00,000
+just like your post delivery service.
+
+95
+00:04:00,000 --> 00:04:02,000
+Now when we have a packet and it arrives as a destination,
+
+96
+00:04:02,000 --> 00:04:04,000
+there's a switch, and the switch
+
+97
+00:04:04,000 --> 00:04:08,000
+will send the packet to the correct clients on your network.
+
+98
+00:04:08,000 --> 00:04:11,000
+So if we put all these things together, it looks like this.
+
+99
+00:04:11,000 --> 00:04:14,000
+Our client will send the data to a router,
+
+100
+00:04:14,000 --> 00:04:17,000
+the router will find it's way all the way to a switch,
+
+101
+00:04:17,000 --> 00:04:20,000
+and the switch will know to which computer
+
+102
+00:04:20,000 --> 00:04:22,000
+in your network to send the data to.
+
+103
+00:04:22,000 --> 00:04:25,000
+So why do I introduce all these things?
+
+104
+00:04:25,000 --> 00:04:28,000
+Well, let's go back to traditional IT.
+
+105
+00:04:28,000 --> 00:04:31,000
+When people used to start websites or companies before,
+
+106
+00:04:31,000 --> 00:04:35,000
+they used to do it in their home or their garage,
+
+107
+00:04:35,000 --> 00:04:37,000
+and so they would literally go to the store,
+
+108
+00:04:37,000 --> 00:04:41,000
+buy a server, and they put the server in their home.
+
+109
+00:04:41,000 --> 00:04:42,000
+You may have seen TV shows,
+
+110
+00:04:42,000 --> 00:04:45,000
+you may have read some documentation on the internet
+
+111
+00:04:45,000 --> 00:04:47,000
+that describes on how Google was made.
+
+112
+00:04:47,000 --> 00:04:50,000
+You know, Google was started in a garage.
+
+113
+00:04:50,000 --> 00:04:53,000
+Now, as your website grows, you need to add
+
+114
+00:04:53,000 --> 00:04:55,000
+more and more servers to serve that demand,
+
+115
+00:04:55,000 --> 00:04:59,000
+and so your home starts to be filled with servers.
+
+116
+00:04:59,000 --> 00:05:02,000
+So this bad right, but your company is getting bigger,
+
+117
+00:05:02,000 --> 00:05:03,000
+you're generating some money,
+
+118
+00:05:03,000 --> 00:05:06,000
+so you're going to move to your own office,
+
+119
+00:05:06,000 --> 00:05:08,000
+and you decide to allocate a special room
+
+120
+00:05:08,000 --> 00:05:11,000
+which is going to be called a data center.
+
+121
+00:05:11,000 --> 00:05:14,000
+In a data center, you're going to have, again, your servers,
+
+122
+00:05:14,000 --> 00:05:16,000
+and you're going to be able to scale them
+
+123
+00:05:16,000 --> 00:05:19,000
+by adding and purchasing more and more servers.
+
+124
+00:05:19,000 --> 00:05:22,000
+Now this worked, and this worked for so many years,
+
+125
+00:05:22,000 --> 00:05:25,000
+but there are a few problems with this approach.
+
+126
+00:05:25,000 --> 00:05:27,000
+Number one is that when you have a data center
+
+127
+00:05:27,000 --> 00:05:30,000
+or your own home, you're going to have to pay your rent,
+
+128
+00:05:30,000 --> 00:05:33,000
+then you're going to have to add power supply,
+
+129
+00:05:33,000 --> 00:05:34,000
+cooling, and maintenance
+
+130
+00:05:34,000 --> 00:05:36,000
+because it does require some electricity
+
+131
+00:05:36,000 --> 00:05:39,000
+to run your servers, it does require some cooling
+
+132
+00:05:39,000 --> 00:05:41,000
+because the servers do get hot,
+
+133
+00:05:41,000 --> 00:05:42,000
+and sometimes they break down,
+
+134
+00:05:42,000 --> 00:05:44,000
+so you need someone to do the maintenance.
+
+135
+00:05:44,000 --> 00:05:48,000
+On top of it, if you want to add or replace servers,
+
+136
+00:05:48,000 --> 00:05:50,000
+it will take a lot of time because you have to order them,
+
+137
+00:05:50,000 --> 00:05:53,000
+and then you have to hook them up in your center.
+
+138
+00:05:53,000 --> 00:05:55,000
+Scaling is limited.
+
+139
+00:05:55,000 --> 00:05:57,000
+If tomorrow you're getting 10 times bigger,
+
+140
+00:05:57,000 --> 00:05:59,000
+you're going to need 10 times more servers,
+
+141
+00:05:59,000 --> 00:06:02,000
+but you may not have the time or the space to do so.
+
+142
+00:06:02,000 --> 00:06:04,000
+You also need to hire a team
+
+143
+00:06:04,000 --> 00:06:06,000
+that is going to be there all the time,
+
+144
+00:06:06,000 --> 00:06:09,000
+24/7 to monitor the infrastructure
+
+145
+00:06:09,000 --> 00:06:10,000
+in case something goes wrong.
+
+146
+00:06:10,000 --> 00:06:12,000
+And what if there is a disaster,
+
+147
+00:06:12,000 --> 00:06:14,000
+what if there is an earthquake,
+
+148
+00:06:14,000 --> 00:06:17,000
+what if there's a power shutdown, or even a fire?
+
+149
+00:06:17,000 --> 00:06:18,000
+That would be bad, right?
+
+150
+00:06:18,000 --> 00:06:21,000
+So can we externalize all this?
+
+151
+00:06:21,000 --> 00:06:25,000
+And the answer is yes, and that will be the cloud.
+
+152
+00:06:25,000 --> 00:06:26,000
+So I will see you in the next lecture
+
+153
+00:06:26,000 --> 00:06:29,000
+to discuss a little bit more about the cloud.
+

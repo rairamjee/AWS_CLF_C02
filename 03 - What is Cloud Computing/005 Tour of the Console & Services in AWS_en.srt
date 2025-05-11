@@ -1,0 +1,412 @@
+1
+00:00:00,000 --> 00:00:02,000
+So welcome to the AWS Console Home.
+
+2
+00:00:02,000 --> 00:00:04,000
+And in this page, you can do a lot of things.
+
+3
+00:00:04,000 --> 00:00:06,000
+So first of all, let's have a look
+
+4
+00:00:06,000 --> 00:00:08,000
+at the top right corner of your screen,
+
+5
+00:00:08,000 --> 00:00:10,000
+right now, this is what's called the regions selector,
+
+6
+00:00:10,000 --> 00:00:12,000
+and right now I am in Northern Virginia,
+
+7
+00:00:12,000 --> 00:00:14,000
+US east one.
+
+8
+00:00:14,000 --> 00:00:15,000
+But it is advised for this course to
+
+9
+00:00:15,000 --> 00:00:18,000
+choose a region that is geographically close to you.
+
+10
+00:00:18,000 --> 00:00:21,000
+So because I'm in Europe, I'm actually close to Ireland.
+
+11
+00:00:21,000 --> 00:00:24,000
+So I can choose EU west one.
+
+12
+00:00:24,000 --> 00:00:25,000
+But if you are in other regions of the world, for example
+
+13
+00:00:25,000 --> 00:00:28,000
+if you're in Africa and you're close to Capetown
+
+14
+00:00:28,000 --> 00:00:29,000
+then choose this.
+
+15
+00:00:29,000 --> 00:00:31,000
+Of course you don't have to physically be
+
+16
+00:00:31,000 --> 00:00:33,000
+in that region to use that region, okay?
+
+17
+00:00:33,000 --> 00:00:34,000
+You can for example
+
+18
+00:00:34,000 --> 00:00:36,000
+choose whatever region makes sense for you.
+
+19
+00:00:36,000 --> 00:00:38,000
+So choose whatever is closest
+
+20
+00:00:38,000 --> 00:00:41,000
+and this will give you the lowest amount of latency.
+
+21
+00:00:41,000 --> 00:00:43,000
+Next in the console console, you will see a list
+
+22
+00:00:43,000 --> 00:00:45,000
+of recently visited services
+
+23
+00:00:45,000 --> 00:00:46,000
+and it should be empty for you.
+
+24
+00:00:46,000 --> 00:00:47,000
+And I just tried that one
+
+25
+00:00:47,000 --> 00:00:49,000
+so it's showing one right here for me.
+
+26
+00:00:49,000 --> 00:00:52,000
+On the bottom you get some information about AWS.
+
+27
+00:00:52,000 --> 00:00:54,000
+You get the health issues, if need be
+
+28
+00:00:54,000 --> 00:00:57,000
+and cost and usage info for your accounts
+
+29
+00:00:57,000 --> 00:01:00,000
+as well as tutorials to build a solution and so on.
+
+30
+00:01:00,000 --> 00:01:03,000
+So this webpage is actually changing a lot over timeless
+
+31
+00:01:03,000 --> 00:01:05,000
+changed a lot for the past two years.
+
+32
+00:01:05,000 --> 00:01:08,000
+And so it may not look exactly the same as you
+
+33
+00:01:08,000 --> 00:01:10,000
+and in case it looks very, very, very different.
+
+34
+00:01:10,000 --> 00:01:13,000
+I will rerecord this lecture.
+
+35
+00:01:13,000 --> 00:01:14,000
+Okay, so once we have this
+
+36
+00:01:14,000 --> 00:01:17,000
+we need to look at services of AWS.
+
+37
+00:01:17,000 --> 00:01:18,000
+And for this two options,
+
+38
+00:01:18,000 --> 00:01:22,000
+the first one is to go on the top left click on services
+
+39
+00:01:22,000 --> 00:01:24,000
+and you can either look at services
+
+40
+00:01:24,000 --> 00:01:26,000
+by alphabetical order, as you can see
+
+41
+00:01:26,000 --> 00:01:29,000
+there are a lot of services on AWS,
+
+42
+00:01:29,000 --> 00:01:31,000
+or by category for example, for compute
+
+43
+00:01:31,000 --> 00:01:34,000
+you will have all these services and so on.
+
+44
+00:01:34,000 --> 00:01:35,000
+But don't worry over time,
+
+45
+00:01:35,000 --> 00:01:37,000
+we will learn these services
+
+46
+00:01:37,000 --> 00:01:38,000
+and we don't have to navigate that page.
+
+47
+00:01:38,000 --> 00:01:42,000
+Another thing I really like is the search bar.
+
+48
+00:01:42,000 --> 00:01:46,000
+So you can actually type a service for example, route 53
+
+49
+00:01:46,000 --> 00:01:47,000
+and then it gives you search results.
+
+50
+00:01:47,000 --> 00:01:52,000
+So it gives you four services that match this query, okay?
+
+51
+00:01:52,000 --> 00:01:53,000
+And then within these services,
+
+52
+00:01:53,000 --> 00:01:55,000
+we can also have a look at features
+
+53
+00:01:55,000 --> 00:01:57,000
+and 13 features match them.
+
+54
+00:01:57,000 --> 00:02:00,000
+So we can directly jump into the domain names
+
+55
+00:02:00,000 --> 00:02:03,000
+of the route 53 service and it's a good thing.
+
+56
+00:02:03,000 --> 00:02:05,000
+We can also look at blogs, knowledge articles
+
+57
+00:02:05,000 --> 00:02:08,000
+documentations and so on.
+
+58
+00:02:08,000 --> 00:02:08,000
+So this is quite cool.
+
+59
+00:02:08,000 --> 00:02:13,000
+Let's go into route 53 now to have a look at this console.
+
+60
+00:02:13,000 --> 00:02:14,000
+So this one is very special because
+
+61
+00:02:14,000 --> 00:02:17,000
+on the top right hand side, it says global.
+
+62
+00:02:17,000 --> 00:02:18,000
+That means that this console
+
+63
+00:02:18,000 --> 00:02:21,000
+does not require a region selection.
+
+64
+00:02:21,000 --> 00:02:23,000
+And that is more of the exception than the rule,
+
+65
+00:02:23,000 --> 00:02:25,000
+but some services in AWS are where
+
+66
+00:02:25,000 --> 00:02:28,000
+it's called global services and no matter where you are
+
+67
+00:02:28,000 --> 00:02:31,000
+you're going to get the same view.
+
+68
+00:02:31,000 --> 00:02:33,000
+But if you switch services and you go, for example
+
+69
+00:02:33,000 --> 00:02:35,000
+to the EC two service,
+
+70
+00:02:37,000 --> 00:02:39,000
+this time on the top right hand side,
+
+71
+00:02:39,000 --> 00:02:40,000
+as you can see it says Ireland
+
+72
+00:02:40,000 --> 00:02:42,000
+because I chose the Ireland region.
+
+73
+00:02:42,000 --> 00:02:46,000
+And so based if I run this console in Ireland
+
+74
+00:02:46,000 --> 00:02:49,000
+or say in another region, for example, in Canada,
+
+75
+00:02:49,000 --> 00:02:50,000
+well my view is going to be different
+
+76
+00:02:50,000 --> 00:02:52,000
+in terms of the resources that I will see.
+
+77
+00:02:52,000 --> 00:02:54,000
+So that's why it's important for you to remain
+
+78
+00:02:54,000 --> 00:02:57,000
+within the same region for the entire duration
+
+79
+00:02:57,000 --> 00:03:00,000
+of this tutorial and this course.
+
+80
+00:03:00,000 --> 00:03:01,000
+The other thing you can look at
+
+81
+00:03:01,000 --> 00:03:04,000
+is called the AWS global infrastructure
+
+82
+00:03:04,000 --> 00:03:05,000
+that you can find on Google.
+
+83
+00:03:05,000 --> 00:03:06,000
+And this gives you a lot
+
+84
+00:03:06,000 --> 00:03:09,000
+of information around your services.
+
+85
+00:03:09,000 --> 00:03:11,000
+And one thing that is very important to look at
+
+86
+00:03:11,000 --> 00:03:14,000
+is the AWS regional services.
+
+87
+00:03:14,000 --> 00:03:17,000
+And it gives you the services list by region.
+
+88
+00:03:17,000 --> 00:03:19,000
+And so this is table,
+
+89
+00:03:19,000 --> 00:03:22,000
+and so for example, if in the course,
+
+90
+00:03:22,000 --> 00:03:24,000
+I talk about a service and do a hands on,
+
+91
+00:03:24,000 --> 00:03:26,000
+but it doesn't seem to be in your region,
+
+92
+00:03:26,000 --> 00:03:30,000
+you can check here and find the availability of services.
+
+93
+00:03:30,000 --> 00:03:32,000
+So for example, we can check a look,
+
+94
+00:03:32,000 --> 00:03:33,000
+have a look for Cape town
+
+95
+00:03:33,000 --> 00:03:36,000
+and see the services that are available in this region.
+
+96
+00:03:36,000 --> 00:03:37,000
+And if you don't see a service
+
+97
+00:03:37,000 --> 00:03:39,000
+maybe you need to switch a region
+
+98
+00:03:39,000 --> 00:03:41,000
+in of course the console,
+
+99
+00:03:41,000 --> 00:03:42,000
+to have access to it
+
+100
+00:03:42,000 --> 00:03:46,000
+because not all the services from AWS are in every region.
+
+101
+00:03:47,000 --> 00:03:49,000
+So that's it for this lecture,
+
+102
+00:03:49,000 --> 00:03:50,000
+I hope you liked it
+
+103
+00:03:50,000 --> 00:03:52,000
+and I will see you in the next lecture.
+

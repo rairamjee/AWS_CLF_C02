@@ -1,0 +1,172 @@
+1
+00:00:00,000 --> 00:00:01,000
+Now, one last touch before get started
+
+2
+00:00:01,000 --> 00:00:02,000
+with this course.
+
+3
+00:00:02,000 --> 00:00:04,000
+I will be referring to
+
+4
+00:00:04,000 --> 00:00:06,000
+the Shared Responsibility Model quite a lot.
+
+5
+00:00:06,000 --> 00:00:09,000
+And you will see this diagram at the end of this course.
+
+6
+00:00:09,000 --> 00:00:12,000
+This is what define what is your responsibility
+
+7
+00:00:12,000 --> 00:00:14,000
+versus AWS when using the cloud
+
+8
+00:00:14,000 --> 00:00:16,000
+and there is a shared responsibility.
+
+9
+00:00:16,000 --> 00:00:19,000
+You as a customer, you're responsible
+
+10
+00:00:19,000 --> 00:00:21,000
+for the security in the cloud.
+
+11
+00:00:21,000 --> 00:00:23,000
+So whatever you use in the cloud,
+
+12
+00:00:23,000 --> 00:00:26,000
+however you configure it is your entire responsibility.
+
+13
+00:00:26,000 --> 00:00:29,000
+That includes security, your data, your operating system,
+
+14
+00:00:29,000 --> 00:00:32,000
+your network and firewall configuration, et cetera.
+
+15
+00:00:32,000 --> 00:00:34,000
+And AWS is going to be responsible
+
+16
+00:00:34,000 --> 00:00:37,000
+for the security of the cloud.
+
+17
+00:00:37,000 --> 00:00:39,000
+So all the infrastructure, all the hardware,
+
+18
+00:00:39,000 --> 00:00:43,000
+all the software, all their own internal security,
+
+19
+00:00:43,000 --> 00:00:44,000
+they are responsible of.
+
+20
+00:00:44,000 --> 00:00:47,000
+And this is why we have shared responsibility.
+
+21
+00:00:47,000 --> 00:00:49,000
+In the Certified Cloud Practitioner exam,
+
+22
+00:00:49,000 --> 00:00:51,000
+you will be asked some questions around finding
+
+23
+00:00:51,000 --> 00:00:52,000
+what is your responsibility
+
+24
+00:00:52,000 --> 00:00:55,000
+and what is the responsibility of AWS.
+
+25
+00:00:55,000 --> 00:00:57,000
+So I just wanted to give you a quick overview of this
+
+26
+00:00:57,000 --> 00:01:00,000
+and in some sections I will be referring back
+
+27
+00:01:00,000 --> 00:01:02,000
+to this diagram and this model to tell you
+
+28
+00:01:02,000 --> 00:01:04,000
+what is your responsibility
+
+29
+00:01:04,000 --> 00:01:06,000
+and what is the responsibility of AWS.
+
+30
+00:01:07,000 --> 00:01:09,000
+Finally, when you use AWS,
+
+31
+00:01:09,000 --> 00:01:12,000
+you are agreeing to their Acceptable Use Policy,
+
+32
+00:01:12,000 --> 00:01:13,000
+which you can find right here
+
+33
+00:01:13,000 --> 00:01:14,000
+and I think it's pretty obvious
+
+34
+00:01:14,000 --> 00:01:16,000
+that you cannot do any illegal,
+
+35
+00:01:16,000 --> 00:01:19,000
+harmful of offensive use or content,
+
+36
+00:01:19,000 --> 00:01:21,000
+you cannot do any security violation,
+
+37
+00:01:21,000 --> 00:01:23,000
+you cannot abuse a network
+
+38
+00:01:23,000 --> 00:01:26,000
+and you cannot do email or other types of messages abuse.
+
+39
+00:01:26,000 --> 00:01:29,000
+All of that makes sense but it's good to specify it.
+
+40
+00:01:29,000 --> 00:01:30,000
+Now , I hope you're excited.
+
+41
+00:01:30,000 --> 00:01:32,000
+We're gonna get started with this course
+
+42
+00:01:32,000 --> 00:01:34,000
+and actually get to use the cloud.
+
+43
+00:01:34,000 --> 00:01:36,000
+So, I will see you in the next section.
+
