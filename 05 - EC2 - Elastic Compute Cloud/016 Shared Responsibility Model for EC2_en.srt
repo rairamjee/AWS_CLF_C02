@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:01,000
+Now again,
+
+2
+00:00:01,000 --> 00:00:04,000
+one more reminder into the Shared Responsibility Model
+
+3
+00:00:04,000 --> 00:00:06,000
+and how this applies for EC2.
+
+4
+00:00:06,000 --> 00:00:10,000
+So AWS is going to be responsible for all data centers,
+
+5
+00:00:10,000 --> 00:00:13,000
+their infrastructure and the security of them,
+
+6
+00:00:13,000 --> 00:00:15,000
+then AWS is going to be responsible
+
+7
+00:00:15,000 --> 00:00:18,000
+for making sure you have isolation on the physical host,
+
+8
+00:00:18,000 --> 00:00:19,000
+if you're getting,
+
+9
+00:00:19,000 --> 00:00:22,000
+for example, a dedicated host or replacing faulty hardware
+
+10
+00:00:22,000 --> 00:00:24,000
+if one of their servers is failing,
+
+11
+00:00:24,000 --> 00:00:27,000
+or making sure they are still compliant with the regulations
+
+12
+00:00:27,000 --> 00:00:29,000
+that they have agreed to.
+
+13
+00:00:29,000 --> 00:00:30,000
+But you as a user,
+
+14
+00:00:30,000 --> 00:00:33,000
+you're responsible for the security in the cloud.
+
+15
+00:00:33,000 --> 00:00:36,000
+So that means that you define your own security group rules.
+
+16
+00:00:36,000 --> 00:00:38,000
+And this allows you or other people to access
+
+17
+00:00:38,000 --> 00:00:41,000
+or not your EC2 instances.
+
+18
+00:00:41,000 --> 00:00:44,000
+You own the entire virtual machine
+
+19
+00:00:44,000 --> 00:00:46,000
+inside of your EC2 instance.
+
+20
+00:00:46,000 --> 00:00:48,000
+So that means that your operating system will be Windows
+
+21
+00:00:48,000 --> 00:00:51,000
+or Linux, all the patches and the updates.
+
+22
+00:00:51,000 --> 00:00:53,000
+You have to do them not AWS.
+
+23
+00:00:53,000 --> 00:00:55,000
+AWS will give you the virtual machine.
+
+24
+00:00:55,000 --> 00:00:57,000
+It's up to you to handle it the way you want.
+
+25
+00:00:57,000 --> 00:00:59,000
+That means that all the software
+
+26
+00:00:59,000 --> 00:01:02,000
+and the utilities that are installed on this EC2 instance,
+
+27
+00:01:02,000 --> 00:01:05,000
+also are yours to be responsible for.
+
+28
+00:01:05,000 --> 00:01:09,000
+Finally, understanding how to assign AM Roles
+
+29
+00:01:09,000 --> 00:01:11,000
+and make sure the permissions are correct.
+
+30
+00:01:11,000 --> 00:01:15,000
+And finally, making sure data is secure on your instance
+
+31
+00:01:15,000 --> 00:01:17,000
+is also very important for your EC2 instances.
+
+32
+00:01:17,000 --> 00:01:18,000
+So that's it.
+
+33
+00:01:18,000 --> 00:01:20,000
+Hope that again puts a bit of perspective
+
+34
+00:01:20,000 --> 00:01:23,000
+on to the shared responsibility model for EC2
+
+35
+00:01:23,000 --> 00:01:25,000
+and I will see you in the next lecture.
+

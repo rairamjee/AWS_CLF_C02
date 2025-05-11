@@ -1,0 +1,373 @@
+1
+00:00:00,000 --> 00:00:01,000
+- [Stephane] Welcome
+to the first deep dive
+
+2
+00:00:01,000 --> 00:00:03,000
+on an iterator service.
+
+3
+00:00:03,000 --> 00:00:04,000
+The first one is called IAM.
+
+4
+00:00:04,000 --> 00:00:08,000
+So IAM stands for identity
+and access management.
+
+5
+00:00:08,000 --> 00:00:10,000
+It is a global service because in IAM,
+
+6
+00:00:10,000 --> 00:00:14,000
+we are going to create our
+users and assign them to group.
+
+7
+00:00:14,000 --> 00:00:16,000
+So we've already used IAM without knowing,
+
+8
+00:00:17,000 --> 00:00:19,000
+when we created an account,
+we created a root accounts,
+
+9
+00:00:19,000 --> 00:00:21,000
+and has been created by default.
+
+10
+00:00:21,000 --> 00:00:23,000
+This is the root user of our accounts.
+
+11
+00:00:23,000 --> 00:00:25,000
+And the only things you
+should use it for is
+
+12
+00:00:25,000 --> 00:00:27,000
+to set up your account
+as we'll do it right now.
+
+13
+00:00:27,000 --> 00:00:29,000
+But then you shouldn't
+use that account anymore,
+
+14
+00:00:29,000 --> 00:00:31,000
+or even share it.
+
+15
+00:00:31,000 --> 00:00:34,000
+What you should be doing
+instead, is create users.
+
+16
+00:00:34,000 --> 00:00:36,000
+So you will create users in IAM,
+
+17
+00:00:36,000 --> 00:00:40,000
+and one user represents one
+person within your organization.
+
+18
+00:00:40,000 --> 00:00:42,000
+And the users can be grouped
+together if it makes sense.
+
+19
+00:00:42,000 --> 00:00:44,000
+So let's take an example
+we have an organization
+
+20
+00:00:44,000 --> 00:00:45,000
+with six people.
+
+21
+00:00:45,000 --> 00:00:49,000
+You have Alice, Bob,
+Charles, David, Edward
+
+22
+00:00:49,000 --> 00:00:52,000
+and Fred so all these people
+are in your organization.
+
+23
+00:00:52,000 --> 00:00:55,000
+Now Alice, Bob, and
+Charles they work together.
+
+24
+00:00:55,000 --> 00:00:56,000
+They're all developers.
+
+25
+00:00:56,000 --> 00:00:58,000
+So we're going to create a group called
+
+26
+00:00:58,000 --> 00:01:00,000
+the group developers who regrouping Alice,
+
+27
+00:01:00,000 --> 00:01:02,000
+Bob and Charles.
+
+28
+00:01:02,000 --> 00:01:05,000
+And it turns out that David
+and Edward also work together.
+
+29
+00:01:05,000 --> 00:01:08,000
+So we're going to create
+an operations group.
+
+30
+00:01:08,000 --> 00:01:10,000
+Now we have two groups within IAM.
+
+31
+00:01:10,000 --> 00:01:14,000
+Now groups can only contain
+users, not other groups.
+
+32
+00:01:14,000 --> 00:01:16,000
+So this is something very
+important to understand.
+
+33
+00:01:16,000 --> 00:01:18,000
+Groups only contain users.
+
+34
+00:01:18,000 --> 00:01:21,000
+Now, some users don't
+have to belong to a group.
+
+35
+00:01:21,000 --> 00:01:24,000
+For example, Fred right here is alone,
+
+36
+00:01:24,000 --> 00:01:26,000
+he does not correspond to any group.
+
+37
+00:01:26,000 --> 00:01:27,000
+That is not best practice.
+
+38
+00:01:27,000 --> 00:01:30,000
+But it is something you can do in AWS.
+
+39
+00:01:30,000 --> 00:01:34,000
+And also, a user can
+belong to multiple groups.
+
+40
+00:01:34,000 --> 00:01:36,000
+That means that for example,
+if you know that Charles
+
+41
+00:01:36,000 --> 00:01:37,000
+and David worked together,
+
+42
+00:01:37,000 --> 00:01:39,000
+and they're part of your audit team,
+
+43
+00:01:39,000 --> 00:01:42,000
+you can create a third group
+with Charles and David.
+
+44
+00:01:42,000 --> 00:01:44,000
+And as you can see, now, in this example,
+
+45
+00:01:44,000 --> 00:01:47,000
+Charles and David are part
+of two different groups.
+
+46
+00:01:47,000 --> 00:01:51,000
+So this is the possible
+configurations for IAM.
+
+47
+00:01:51,000 --> 00:01:54,000
+So why do we create users
+and why do we create groups?
+
+48
+00:01:54,000 --> 00:01:58,000
+Well, because we want to allow
+them to use our AWS accounts
+
+49
+00:01:58,000 --> 00:01:59,000
+and to allow them to do so,
+
+50
+00:01:59,000 --> 00:02:01,000
+we have to give them permissions.
+
+51
+00:02:01,000 --> 00:02:04,000
+So users or groups can be assigned
+
+52
+00:02:04,000 --> 00:02:05,000
+what's called a JSON document.
+
+53
+00:02:05,000 --> 00:02:08,000
+I'll show you right now what
+it means called a policy,
+
+54
+00:02:08,000 --> 00:02:10,000
+an IAM policy.
+
+55
+00:02:10,000 --> 00:02:11,000
+So it looks just like this.
+
+56
+00:02:11,000 --> 00:02:13,000
+So you don't have to be a programmer.
+
+57
+00:02:13,000 --> 00:02:14,000
+This is not programming.
+
+58
+00:02:14,000 --> 00:02:17,000
+This is just describing
+in, I think plain English,
+
+59
+00:02:17,000 --> 00:02:20,000
+what a user is allowed
+to do or what a group
+
+60
+00:02:20,000 --> 00:02:24,000
+and all the users within
+that group are allowed to do.
+
+61
+00:02:24,000 --> 00:02:27,000
+So in this example, we can
+see that we allow people
+
+62
+00:02:27,000 --> 00:02:30,000
+to use the EC2 to service
+and do describe on it,
+
+63
+00:02:30,000 --> 00:02:31,000
+to use the elastic load balancing service
+
+64
+00:02:31,000 --> 00:02:34,000
+and to describe on it
+and to use CloudWatch.
+
+65
+00:02:34,000 --> 00:02:36,000
+Now we'll see what EC2
+elastic load balancing
+
+66
+00:02:36,000 --> 00:02:40,000
+and CloudWatch mean, but
+through this JSON document
+
+67
+00:02:40,000 --> 00:02:41,000
+that looks just like this.
+
+68
+00:02:41,000 --> 00:02:45,000
+We are allowing our users
+to use some services in AWS.
+
+69
+00:02:45,000 --> 00:02:48,000
+So these policies will
+help us define permissions
+
+70
+00:02:48,000 --> 00:02:49,000
+of our users.
+
+71
+00:02:49,000 --> 00:02:53,000
+And so in AWS, you don't allow
+everyone to do everything
+
+72
+00:02:53,000 --> 00:02:54,000
+that would be catastrophic,
+
+73
+00:02:54,000 --> 00:02:58,000
+because a new user could
+basically launch so many services
+
+74
+00:02:58,000 --> 00:02:59,000
+and they will cost you a lot of money
+
+75
+00:02:59,000 --> 00:03:01,000
+or would be valid for security.
+
+76
+00:03:01,000 --> 00:03:04,000
+So in AWS, you apply a principle called
+
+77
+00:03:04,000 --> 00:03:06,000
+the least privilege principle.
+
+78
+00:03:06,000 --> 00:03:10,000
+So you don't give more
+permissions than a user needs.
+
+79
+00:03:10,000 --> 00:03:13,000
+Okay, so if a user just needs
+access to three services,
+
+80
+00:03:13,000 --> 00:03:15,000
+just create a permission for that user.
+
+81
+00:03:15,000 --> 00:03:18,000
+So now we have seen an overview IAM.
+
+82
+00:03:18,000 --> 00:03:19,000
+Let's go in the next lecture
+
+83
+00:03:19,000 --> 00:03:22,000
+to practice creating users and groups.
+

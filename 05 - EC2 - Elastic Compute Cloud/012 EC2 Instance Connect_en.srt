@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:02,000
+I want to show you an alternative to SSH
+
+2
+00:00:02,000 --> 00:00:04,000
+that I found a lot easier
+
+3
+00:00:04,000 --> 00:00:06,000
+which is the EC2 Instance Connect.
+
+4
+00:00:06,000 --> 00:00:09,000
+So for this, you click on My First Instance
+
+5
+00:00:09,000 --> 00:00:12,000
+and then you click on the top, it says connect.
+
+6
+00:00:12,000 --> 00:00:14,000
+You have multiple options including
+
+7
+00:00:14,000 --> 00:00:16,000
+the SSH client we saw from before.
+
+8
+00:00:16,000 --> 00:00:19,000
+But one option I wanna show you is the EC2 Instance Connect.
+
+9
+00:00:19,000 --> 00:00:22,000
+So this allows us to do a browser based SSH session
+
+10
+00:00:22,000 --> 00:00:24,000
+into our EC2 Instance.
+
+11
+00:00:24,000 --> 00:00:27,000
+For this we verified the public IP address, which is good.
+
+12
+00:00:27,000 --> 00:00:30,000
+The username is provided by default,
+
+13
+00:00:30,000 --> 00:00:32,000
+which is EC2 user because it get guessed
+
+14
+00:00:32,000 --> 00:00:35,000
+by AWS that we are using Amazon and X2
+
+15
+00:00:35,000 --> 00:00:37,000
+and therefore EC2 User is the right username,
+
+16
+00:00:37,000 --> 00:00:39,000
+but if you wanted to, you could override it,
+
+17
+00:00:39,000 --> 00:00:41,000
+but it doesn't work unless you enter EC2 users.
+
+18
+00:00:41,000 --> 00:00:44,000
+So we'll leave it as is for now,
+
+19
+00:00:44,000 --> 00:00:47,000
+and then, as you see there's no SSH key option,
+
+20
+00:00:47,000 --> 00:00:49,000
+because, well, when we do connect to it,
+
+21
+00:00:49,000 --> 00:00:52,000
+it's going to upload for us a temporary SSH key
+
+22
+00:00:52,000 --> 00:00:54,000
+and establish a connection this way.
+
+23
+00:00:54,000 --> 00:00:55,000
+So with this methodology,
+
+24
+00:00:55,000 --> 00:00:59,000
+we don't even need to manage SSH keys which I found lovely.
+
+25
+00:00:59,000 --> 00:01:02,000
+So you click on Connect and it's going to open a new tab.
+
+26
+00:01:02,000 --> 00:01:06,000
+And very quickly you are into your Amazon Linux 2 AMI
+
+27
+00:01:06,000 --> 00:01:08,000
+and you can start running some commands
+
+28
+00:01:08,000 --> 00:01:10,000
+such as whoami or ping google.com.
+
+29
+00:01:10,000 --> 00:01:12,000
+And as you can see, everything is working.
+
+30
+00:01:12,000 --> 00:01:14,000
+So the cool thing about it is that,
+
+31
+00:01:14,000 --> 00:01:16,000
+well, your session is in the browser
+
+32
+00:01:16,000 --> 00:01:18,000
+instead of using a different command line interface
+
+33
+00:01:18,000 --> 00:01:20,000
+such as terminal and so on.
+
+34
+00:01:20,000 --> 00:01:24,000
+And so you do ping google.com or do
+
+35
+00:01:24,000 --> 00:01:26,000
+any kind of commands you want really on it
+
+36
+00:01:26,000 --> 00:01:29,000
+without using the SSH utility beforehand.
+
+37
+00:01:29,000 --> 00:01:32,000
+But in this course, if I say use SSH,
+
+38
+00:01:32,000 --> 00:01:35,000
+you have either the option to use your own terminal mssh
+
+39
+00:01:35,000 --> 00:01:40,000
+or to use for example, party, or to use the SSH command
+
+40
+00:01:40,000 --> 00:01:42,000
+on windows or to use, regardless of you here
+
+41
+00:01:42,000 --> 00:01:45,000
+on windows, Linux, or Mac, the EC2 Instance Connect.
+
+42
+00:01:45,000 --> 00:01:49,000
+Now this is relying on the SSH behind the scenes.
+
+43
+00:01:49,000 --> 00:01:52,000
+So if I go, for example, to my Instance
+
+44
+00:01:52,000 --> 00:01:55,000
+look at the security group and I want to edit the rules.
+
+45
+00:01:55,000 --> 00:01:57,000
+So I click on my security group in here,
+
+46
+00:01:57,000 --> 00:01:59,000
+the inbound rules I'm going to edit them
+
+47
+00:01:59,000 --> 00:02:02,000
+and I'm going to remove the SSH inbound rules.
+
+48
+00:02:02,000 --> 00:02:04,000
+So I delete it and save the rules
+
+49
+00:02:05,000 --> 00:02:09,000
+and then go back to my EC2 Instances,
+
+50
+00:02:09,000 --> 00:02:11,000
+and I close this one and I'll try to establish
+
+51
+00:02:11,000 --> 00:02:13,000
+a new EC2 Instance Connect.
+
+52
+00:02:13,000 --> 00:02:18,000
+So let's connect, as you can see, this is not working
+
+53
+00:02:19,000 --> 00:02:21,000
+because while there's a problem connected to your Instance.
+
+54
+00:02:21,000 --> 00:02:25,000
+The first thing is that you need to open the port 22.
+
+55
+00:02:25,000 --> 00:02:27,000
+So back into my launch wizard, I can fix this.
+
+56
+00:02:27,000 --> 00:02:32,000
+I will edit the inbound rule, add the SSH rule
+
+57
+00:02:32,000 --> 00:02:35,000
+from anywhere IPV4, save the rule.
+
+58
+00:02:36,000 --> 00:02:39,000
+Let's go back in here and just in case,
+
+59
+00:02:39,000 --> 00:02:40,000
+if it doesn't work for you,
+
+60
+00:02:40,000 --> 00:02:45,000
+sometimes it's because you're using IPV6, excuse me.
+
+61
+00:02:46,000 --> 00:02:48,000
+So therefore you need to do from anywhere IPV6 as well.
+
+62
+00:02:48,000 --> 00:02:51,000
+So you need to add these two entries
+
+63
+00:02:51,000 --> 00:02:53,000
+for your EC2 Instance Connect
+
+64
+00:02:53,000 --> 00:02:56,000
+to work sometimes, depends on your setup.
+
+65
+00:02:56,000 --> 00:02:58,000
+So we're good to go.
+
+66
+00:02:58,000 --> 00:03:01,000
+And now if we try to connect to the Instance itself,
+
+67
+00:03:01,000 --> 00:03:02,000
+so let's try to connect in here.
+
+68
+00:03:05,000 --> 00:03:08,000
+Voila, we are into the Instance.
+
+69
+00:03:08,000 --> 00:03:08,000
+Okay.
+
+70
+00:03:08,000 --> 00:03:10,000
+So there was a quick demo of EC2 Instance Connect.
+
+71
+00:03:10,000 --> 00:03:12,000
+I will use it a lot in this course.
+
+72
+00:03:12,000 --> 00:03:15,000
+I hope you liked it, and I will see you in the next lecture.
+

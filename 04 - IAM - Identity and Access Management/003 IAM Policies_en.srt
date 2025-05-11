@@ -1,0 +1,288 @@
+1
+00:00:00,000 --> 00:00:04,000
+Okay, so now let's discuss, IAM policies in depth.
+
+2
+00:00:04,000 --> 00:00:06,000
+So let's imagine we have a group of developers,
+
+3
+00:00:06,000 --> 00:00:09,000
+Alice, Bob and Charles, and we,
+
+4
+00:00:09,000 --> 00:00:12,000
+attach a policy at the group level.
+
+5
+00:00:12,000 --> 00:00:14,000
+In that case, the policy will get applied
+
+6
+00:00:14,000 --> 00:00:16,000
+to every single member of the group
+
+7
+00:00:16,000 --> 00:00:18,000
+so both Alice, Bob, and Charles
+
+8
+00:00:18,000 --> 00:00:22,000
+they will all get access and inherit this policy.
+
+9
+00:00:23,000 --> 00:00:25,000
+Now, if you have a second group with operations
+
+10
+00:00:25,000 --> 00:00:26,000
+with a different policy,
+
+11
+00:00:26,000 --> 00:00:28,000
+David and Edward will have a different policy
+
+12
+00:00:28,000 --> 00:00:30,000
+than the group of developers.
+
+13
+00:00:30,000 --> 00:00:32,000
+If Fred is a user,
+
+14
+00:00:32,000 --> 00:00:35,000
+it has the possibility not to belong to a group.
+
+15
+00:00:35,000 --> 00:00:36,000
+And we have the possibility to create what's called
+
+16
+00:00:36,000 --> 00:00:38,000
+an inline policy which has a policy
+
+17
+00:00:38,000 --> 00:00:40,000
+that's only attached to a user.
+
+18
+00:00:40,000 --> 00:00:42,000
+So that user could or could not belong to a group
+
+19
+00:00:42,000 --> 00:00:46,000
+you can have inline policies for whatever user you want.
+
+20
+00:00:46,000 --> 00:00:48,000
+And finally, if Charles and David both belong
+
+21
+00:00:48,000 --> 00:00:51,000
+to the audit team and you attach a policy to the audit team
+
+22
+00:00:51,000 --> 00:00:54,000
+as well, Charles and David will also inherit
+
+23
+00:00:54,000 --> 00:00:56,000
+that policy from the audit team.
+
+24
+00:00:56,000 --> 00:00:58,000
+So in this case, Charles has a policy from developers
+
+25
+00:00:58,000 --> 00:01:00,000
+and a policy from audit team.
+
+26
+00:01:00,000 --> 00:01:02,000
+And David has a policy from audit team
+
+27
+00:01:02,000 --> 00:01:04,000
+and a policy from the operations team.
+
+28
+00:01:04,000 --> 00:01:05,000
+That should make a lot of sense
+
+29
+00:01:05,000 --> 00:01:07,000
+when we get into the hands-on.
+
+30
+00:01:07,000 --> 00:01:09,000
+Now, in terms of the policy structure,
+
+31
+00:01:09,000 --> 00:01:11,000
+you just need to know at a high level how it works,
+
+32
+00:01:11,000 --> 00:01:12,000
+as well as how it is named.
+
+33
+00:01:12,000 --> 00:01:15,000
+So this is something you will see quite a lot in AWS,
+
+34
+00:01:15,000 --> 00:01:17,000
+so get familiar with this structure
+
+35
+00:01:17,000 --> 00:01:19,000
+this is adjacent documents.
+
+36
+00:01:19,000 --> 00:01:21,000
+And so an IAM policy structure, consists of a
+
+37
+00:01:21,000 --> 00:01:24,000
+version number, so usually it's 2012-10-17,
+
+38
+00:01:24,000 --> 00:01:27,000
+this is the policy language version.
+
+39
+00:01:27,000 --> 00:01:30,000
+And ID which is how to identify that policy,
+
+40
+00:01:30,000 --> 00:01:31,000
+this is optional.
+
+41
+00:01:31,000 --> 00:01:33,000
+And then more statements,
+
+42
+00:01:33,000 --> 00:01:36,000
+and statements can be one or multiple ones,
+
+43
+00:01:36,000 --> 00:01:37,000
+and a statement has some very important parts.
+
+44
+00:01:37,000 --> 00:01:41,000
+So the Sid is a statement ID, which is an identifier
+
+45
+00:01:41,000 --> 00:01:43,000
+for the statement, which is optional as well,
+
+46
+00:01:43,000 --> 00:01:45,000
+so on the right hand side is the number one.
+
+47
+00:01:45,000 --> 00:01:50,000
+The effect of the policy itself, so it is whether or not
+
+48
+00:01:50,000 --> 00:01:53,000
+the statement allows or denies access to certain API,
+
+49
+00:01:53,000 --> 00:01:56,000
+so in the right hand side, this says allow,
+
+50
+00:01:56,000 --> 00:01:57,000
+but you can see deny as well.
+
+51
+00:01:57,000 --> 00:02:02,000
+The principle consists of which accounts, user or role
+
+52
+00:02:02,000 --> 00:02:05,000
+which, to which this policy will be applied to.
+
+53
+00:02:05,000 --> 00:02:08,000
+So in this example, it's applied to the root accounts
+
+54
+00:02:08,000 --> 00:02:10,000
+of your AWS accounts.
+
+55
+00:02:10,000 --> 00:02:13,000
+Action is the list of API calls that will be
+
+56
+00:02:13,000 --> 00:02:16,000
+either denied or allowed based on the effect.
+
+57
+00:02:16,000 --> 00:02:19,000
+And the resource is a list of resources,
+
+58
+00:02:19,000 --> 00:02:22,000
+to which the actions will be applied to.
+
+59
+00:02:22,000 --> 00:02:24,000
+So in this example, it is a bucket,
+
+60
+00:02:24,000 --> 00:02:25,000
+but it could be many different things.
+
+61
+00:02:25,000 --> 00:02:27,000
+And finally in, not represented here
+
+62
+00:02:27,000 --> 00:02:29,000
+but there's a condition to which when
+
+63
+00:02:29,000 --> 00:02:32,000
+this statement should be applied or not,
+
+64
+00:02:32,000 --> 00:02:35,000
+and this is not representative here because it is optional.
+
+65
+00:02:35,000 --> 00:02:36,000
+So going into the exam, you need to make sure
+
+66
+00:02:36,000 --> 00:02:39,000
+that you really understand the effect, the principle,
+
+67
+00:02:39,000 --> 00:02:41,000
+the action and resource, but don't worry,
+
+68
+00:02:41,000 --> 00:02:43,000
+you will see those along the way in the course
+
+69
+00:02:43,000 --> 00:02:45,000
+so you should be confident with them
+
+70
+00:02:45,000 --> 00:02:46,000
+by the end of the course.
+
+71
+00:02:46,000 --> 00:02:48,000
+That's it for this lecture, I hope you liked it.
+
+72
+00:02:48,000 --> 00:02:50,000
+And I will see you in the next lecture.
+

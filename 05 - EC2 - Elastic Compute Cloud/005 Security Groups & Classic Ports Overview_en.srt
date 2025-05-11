@@ -1,0 +1,728 @@
+1
+00:00:00,000 --> 00:00:02,000
+Let's talk about these firewalls
+
+2
+00:00:02,000 --> 00:00:04,000
+around our EC2 instances.
+
+3
+00:00:04,000 --> 00:00:06,000
+So we briefly configured one in the previous lecture,
+
+4
+00:00:06,000 --> 00:00:08,000
+but security groups, yet again,
+
+5
+00:00:08,000 --> 00:00:12,000
+are going to be fundamental into doing network security
+
+6
+00:00:12,000 --> 00:00:14,000
+in the AWS cloud.
+
+7
+00:00:14,000 --> 00:00:17,000
+They will control how the traffic is allowed into
+
+8
+00:00:17,000 --> 00:00:20,000
+and out of your EC2 instances.
+
+9
+00:00:20,000 --> 00:00:22,000
+Security groups are going to be very easy.
+
+10
+00:00:22,000 --> 00:00:23,000
+They only contain allow rules.
+
+11
+00:00:23,000 --> 00:00:27,000
+So we can say what is allowed to go in and to go out.
+
+12
+00:00:27,000 --> 00:00:29,000
+And security groups can have rules that reference
+
+13
+00:00:29,000 --> 00:00:33,000
+either by IP addresses, so where your computer is from,
+
+14
+00:00:33,000 --> 00:00:34,000
+or by other security groups.
+
+15
+00:00:34,000 --> 00:00:37,000
+So as we'll see, security groups can reference each other.
+
+16
+00:00:37,000 --> 00:00:39,000
+So here, let's take an example.
+
+17
+00:00:39,000 --> 00:00:43,000
+We are on our computer, so we are on the public internet,
+
+18
+00:00:43,000 --> 00:00:45,000
+and we're trying to access our EC2 instance
+
+19
+00:00:45,000 --> 00:00:47,000
+from our computer.
+
+20
+00:00:47,000 --> 00:00:49,000
+We are going to create a security group
+
+21
+00:00:49,000 --> 00:00:51,000
+around our EC2 instance,
+
+22
+00:00:51,000 --> 00:00:53,000
+that is the firewall that is around it.
+
+23
+00:00:53,000 --> 00:00:56,000
+And then this security group is going to have rules.
+
+24
+00:00:56,000 --> 00:00:57,000
+And these rules are going to say
+
+25
+00:00:57,000 --> 00:01:00,000
+whether or not some inbound traffic,
+
+26
+00:01:00,000 --> 00:01:04,000
+so from the outside into the EC2 instance is allowed.
+
+27
+00:01:04,000 --> 00:01:06,000
+And also if the EC2 instance
+
+28
+00:01:06,000 --> 00:01:08,000
+can perform some outbound traffic,
+
+29
+00:01:08,000 --> 00:01:12,000
+so to talk from where it is into the internet.
+
+30
+00:01:12,000 --> 00:01:14,000
+Now let's do a deeper dive, right?
+
+31
+00:01:14,000 --> 00:01:17,000
+Security groups are a firewall on our EC2 instances,
+
+32
+00:01:17,000 --> 00:01:18,000
+and they're going to really get
+
+33
+00:01:18,000 --> 00:01:20,000
+and regulate access to ports.
+
+34
+00:01:20,000 --> 00:01:23,000
+They're going to see the authorized IP ranges.
+
+35
+00:01:23,000 --> 00:01:25,000
+Would it be on IPv4 or IPv6?
+
+36
+00:01:25,000 --> 00:01:28,000
+These are the two kinds of IP on the internet.
+
+37
+00:01:28,000 --> 00:01:30,000
+This is going to control the inbound network,
+
+38
+00:01:30,000 --> 00:01:33,000
+so from the outside to the instance,
+
+39
+00:01:33,000 --> 00:01:36,000
+and the outbound network from the instance to the outside.
+
+40
+00:01:36,000 --> 00:01:39,000
+And when we look at security group rules,
+
+41
+00:01:39,000 --> 00:01:40,000
+they will look just like this.
+
+42
+00:01:40,000 --> 00:01:43,000
+So there will be the type, the protocol,
+
+43
+00:01:43,000 --> 00:01:45,000
+so TCP, the port allowing it,
+
+44
+00:01:45,000 --> 00:01:48,000
+so where the traffic can go through on the instance,
+
+45
+00:01:48,000 --> 00:01:51,000
+and the source, which represents an IP address range.
+
+46
+00:01:51,000 --> 00:01:54,000
+And 0.0.0.0/0 means everything.
+
+47
+00:01:54,000 --> 00:01:57,000
+And this here means just one IP.
+
+48
+00:01:57,000 --> 00:01:59,000
+Now let's look at a diagram, right?
+
+49
+00:01:59,000 --> 00:02:01,000
+So we have our EC2 instance,
+
+50
+00:02:01,000 --> 00:02:05,000
+and it has one security group attached to it
+
+51
+00:02:05,000 --> 00:02:06,000
+that has inbound rules and outbound rules,
+
+52
+00:02:06,000 --> 00:02:08,000
+so I've separated them onto this diagram.
+
+53
+00:02:08,000 --> 00:02:12,000
+So our computer is going to be authorized on, say, port 22,
+
+54
+00:02:12,000 --> 00:02:15,000
+so the traffic can go through from our computer
+
+55
+00:02:15,000 --> 00:02:17,000
+to the EC2 instance.
+
+56
+00:02:17,000 --> 00:02:20,000
+But someone else's computer that's not using my IP address
+
+57
+00:02:20,000 --> 00:02:22,000
+because they don't live where I live,
+
+58
+00:02:22,000 --> 00:02:25,000
+then if they try to access our EC2 instance,
+
+59
+00:02:25,000 --> 00:02:27,000
+they will not get through it
+
+60
+00:02:27,000 --> 00:02:29,000
+because the firewall is going to block it,
+
+61
+00:02:29,000 --> 00:02:32,000
+and it will be a timeout.
+
+62
+00:02:32,000 --> 00:02:35,000
+Then for the outbound rules, by default,
+
+63
+00:02:35,000 --> 00:02:37,000
+our EC2 instance for any security group
+
+64
+00:02:37,000 --> 00:02:41,000
+is going to be by default allowing any traffic out of it.
+
+65
+00:02:41,000 --> 00:02:42,000
+So our EC2 instance,
+
+66
+00:02:42,000 --> 00:02:46,000
+if it tries to access a website and initiate a connection,
+
+67
+00:02:46,000 --> 00:02:49,000
+it is going to be allowed by the security group.
+
+68
+00:02:49,000 --> 00:02:52,000
+So this is the basics of how the firewall works.
+
+69
+00:02:52,000 --> 00:02:53,000
+Now, good to know,
+
+70
+00:02:53,000 --> 00:02:54,000
+what do you need to know with security groups?
+
+71
+00:02:54,000 --> 00:02:57,000
+Well, they can be attached to multiple instances, OK?
+
+72
+00:02:57,000 --> 00:02:58,000
+There's not a one-to-one relationship
+
+73
+00:02:58,000 --> 00:03:01,000
+between security group and instances,
+
+74
+00:03:01,000 --> 00:03:02,000
+and actually an instance
+
+75
+00:03:02,000 --> 00:03:05,000
+can have multiple security groups too.
+
+76
+00:03:05,000 --> 00:03:06,000
+Security groups are locked down
+
+77
+00:03:06,000 --> 00:03:09,000
+to your region/VPC combination, OK?
+
+78
+00:03:09,000 --> 00:03:11,000
+So if you switch to another region,
+
+79
+00:03:11,000 --> 00:03:12,000
+you have to create a new security group,
+
+80
+00:03:12,000 --> 00:03:14,000
+or if you create another VPC,
+
+81
+00:03:14,000 --> 00:03:17,000
+and we'll see what VPCs are in the later lecture,
+
+82
+00:03:17,000 --> 00:03:19,000
+well, you have to recreate the security groups.
+
+83
+00:03:19,000 --> 00:03:21,000
+The security groups live outside the EC2.
+
+84
+00:03:21,000 --> 00:03:23,000
+So as I said, if the traffic is blocked,
+
+85
+00:03:23,000 --> 00:03:25,000
+the EC2 instance won't even see it, OK?
+
+86
+00:03:25,000 --> 00:03:28,000
+It's not like an application running on EC2.
+
+87
+00:03:28,000 --> 00:03:31,000
+It's really a firewall outside your EC2 instance.
+
+88
+00:03:31,000 --> 00:03:33,000
+To be honest, and that's just an advice to you
+
+89
+00:03:33,000 --> 00:03:35,000
+from developer to developer,
+
+90
+00:03:35,000 --> 00:03:37,000
+but it's good to maintain one separate security group
+
+91
+00:03:37,000 --> 00:03:39,000
+just for SSH access.
+
+92
+00:03:39,000 --> 00:03:41,000
+Usually SSH access is the most complicated thing,
+
+93
+00:03:41,000 --> 00:03:44,000
+and you really want to make sure that one is done correctly.
+
+94
+00:03:44,000 --> 00:03:46,000
+So I usually separate my security group
+
+95
+00:03:46,000 --> 00:03:48,000
+for SSH access separately.
+
+96
+00:03:48,000 --> 00:03:51,000
+If your application is not accessible, so timeout,
+
+97
+00:03:51,000 --> 00:03:52,000
+so we saw this in the last lecture,
+
+98
+00:03:52,000 --> 00:03:54,000
+then it is a security group issue, OK?
+
+99
+00:03:54,000 --> 00:03:56,000
+So if you try to connect to any port
+
+100
+00:03:56,000 --> 00:03:59,000
+and your computer just hangs and waits and waits,
+
+101
+00:03:59,000 --> 00:04:01,000
+that's probably a security group issue.
+
+102
+00:04:01,000 --> 00:04:04,000
+But if you receive a connection refused error,
+
+103
+00:04:04,000 --> 00:04:07,000
+you actually get a response saying connection refused,
+
+104
+00:04:07,000 --> 00:04:09,000
+then the security group actually worked,
+
+105
+00:04:09,000 --> 00:04:12,000
+the traffic went through, and the application was errored
+
+106
+00:04:12,000 --> 00:04:14,000
+or it wasn't launched or something like this.
+
+107
+00:04:14,000 --> 00:04:15,000
+So this is what you would get
+
+108
+00:04:15,000 --> 00:04:17,000
+if you get a connection refused.
+
+109
+00:04:17,000 --> 00:04:19,000
+By default, all inbound traffic is blocked
+
+110
+00:04:19,000 --> 00:04:23,000
+and all outbound traffic is authorized, OK?
+
+111
+00:04:23,000 --> 00:04:24,000
+Now there is a small advanced feature
+
+112
+00:04:24,000 --> 00:04:25,000
+that I really, really like,
+
+113
+00:04:25,000 --> 00:04:28,000
+and I think it's perfect if you start using load balancers,
+
+114
+00:04:28,000 --> 00:04:30,000
+and we'll see this in the next lecture as well,
+
+115
+00:04:30,000 --> 00:04:32,000
+which is how to reference security groups
+
+116
+00:04:32,000 --> 00:04:34,000
+from other security groups.
+
+117
+00:04:34,000 --> 00:04:35,000
+So let me explain things.
+
+118
+00:04:35,000 --> 00:04:38,000
+So we have an EC2 instance, and it has a security group,
+
+119
+00:04:38,000 --> 00:04:40,000
+what I call group number one.
+
+120
+00:04:40,000 --> 00:04:43,000
+And the inbound rules is basically saying,
+
+121
+00:04:43,000 --> 00:04:45,000
+I'm authorizing security group number one inbound
+
+122
+00:04:45,000 --> 00:04:47,000
+and security group number two.
+
+123
+00:04:47,000 --> 00:04:49,000
+So why would we even do this?
+
+124
+00:04:49,000 --> 00:04:52,000
+Well, if we launch another EC2 instance
+
+125
+00:04:52,000 --> 00:04:55,000
+and it has security group two attached to it,
+
+126
+00:04:55,000 --> 00:04:57,000
+well, by using the security group run rule
+
+127
+00:04:57,000 --> 00:05:01,000
+that we just set up, we basically allow our EC2 instance
+
+128
+00:05:01,000 --> 00:05:03,000
+to go connect straight through on the port we decided
+
+129
+00:05:03,000 --> 00:05:06,000
+onto our first EC2 instance.
+
+130
+00:05:06,000 --> 00:05:09,000
+Similarly, if we have another EC2 instance
+
+131
+00:05:09,000 --> 00:05:10,000
+with a security group one attached,
+
+132
+00:05:10,000 --> 00:05:13,000
+well, we've also authorized this one to communicate
+
+133
+00:05:13,000 --> 00:05:15,000
+straight back to our instances.
+
+134
+00:05:15,000 --> 00:05:18,000
+And so regardless of the IP of our EC2 instances,
+
+135
+00:05:18,000 --> 00:05:21,000
+because they have the right security group attached to them,
+
+136
+00:05:21,000 --> 00:05:23,000
+they're able to communicate straight through
+
+137
+00:05:23,000 --> 00:05:24,000
+to other instances.
+
+138
+00:05:24,000 --> 00:05:27,000
+And that's awesome because it doesn't make you think
+
+139
+00:05:27,000 --> 00:05:28,000
+about IPs all the time.
+
+140
+00:05:28,000 --> 00:05:30,000
+And if you have another EC2 instance,
+
+141
+00:05:30,000 --> 00:05:32,000
+maybe with security group number three attached to it,
+
+142
+00:05:32,000 --> 00:05:35,000
+well, because group number three wasn't authorized
+
+143
+00:05:35,000 --> 00:05:37,000
+in the inbound rules of security group number one,
+
+144
+00:05:37,000 --> 00:05:40,000
+then it's being denied and things don't work.
+
+145
+00:05:40,000 --> 00:05:42,000
+So that's a bit of an advanced feature,
+
+146
+00:05:42,000 --> 00:05:44,000
+but we'll see it when we'll deal with load balancers
+
+147
+00:05:44,000 --> 00:05:46,000
+'cause it's quite a common pattern.
+
+148
+00:05:46,000 --> 00:05:47,000
+I just want you to know about it.
+
+149
+00:05:47,000 --> 00:05:48,000
+Again, just remember this diagram.
+
+150
+00:05:48,000 --> 00:05:50,000
+And by now you should be really, really good
+
+151
+00:05:50,000 --> 00:05:53,000
+at security groups and understand them correctly.
+
+152
+00:05:53,000 --> 00:05:56,000
+Now, going into the exam, what ports do you need to know?
+
+153
+00:05:56,000 --> 00:06:00,000
+Well, we need to know something called SSH or secure shell.
+
+154
+00:06:00,000 --> 00:06:02,000
+And we're going to see this in the very next lectures.
+
+155
+00:06:02,000 --> 00:06:03,000
+This is the port 22.
+
+156
+00:06:03,000 --> 00:06:06,000
+And this allows you to log into
+
+157
+00:06:06,000 --> 00:06:09,000
+an EC2 instance on Linux.
+
+158
+00:06:09,000 --> 00:06:12,000
+You have port 21 for FTP or file transfer protocol,
+
+159
+00:06:12,000 --> 00:06:16,000
+which is used to upload files into a file share.
+
+160
+00:06:16,000 --> 00:06:19,000
+And you have SFTP, which is also using port 22.
+
+161
+00:06:19,000 --> 00:06:20,000
+Why?
+
+162
+00:06:20,000 --> 00:06:22,000
+Well, because we're going to upload files,
+
+163
+00:06:22,000 --> 00:06:24,000
+but this time using SSH,
+
+164
+00:06:24,000 --> 00:06:27,000
+because it's going to be a secure file transfer protocol.
+
+165
+00:06:27,000 --> 00:06:30,000
+Then we have port 80 for HTTP.
+
+166
+00:06:30,000 --> 00:06:32,000
+And we've been using it in the previous lecture.
+
+167
+00:06:32,000 --> 00:06:35,000
+This is to access unsecured websites.
+
+168
+00:06:35,000 --> 00:06:37,000
+And you've seen this whenever you go on the internet
+
+169
+00:06:37,000 --> 00:06:40,000
+and you enter HTTP colon slash slash,
+
+170
+00:06:40,000 --> 00:06:42,000
+and then the address of the website.
+
+171
+00:06:42,000 --> 00:06:45,000
+And you've seen most likely a lot more like this.
+
+172
+00:06:45,000 --> 00:06:49,000
+You've seen HTTPS, which is to access secured websites,
+
+173
+00:06:49,000 --> 00:06:50,000
+which are the standard nowadays.
+
+174
+00:06:50,000 --> 00:06:54,000
+And for HTTPS, it is port 443.
+
+175
+00:06:54,000 --> 00:06:58,000
+Finally, the last port you need to remember is 3389
+
+176
+00:06:58,000 --> 00:07:01,000
+for RDP or the remote desktop protocol,
+
+177
+00:07:01,000 --> 00:07:03,000
+which is the port that's used
+
+178
+00:07:03,000 --> 00:07:05,000
+to log into a Windows instance.
+
+179
+00:07:05,000 --> 00:07:09,000
+OK, so 22 is SSH for Linux instance,
+
+180
+00:07:09,000 --> 00:07:13,000
+but 3389 is RDP for a Windows instance.
+
+181
+00:07:13,000 --> 00:07:15,000
+Now, this is all the theory about security groups.
+
+182
+00:07:15,000 --> 00:07:18,000
+I will see you in the next lecture for some practice.
+

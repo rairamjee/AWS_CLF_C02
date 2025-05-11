@@ -1,0 +1,456 @@
+1
+00:00:00,000 --> 00:00:00,000
+So on Windows 10,
+
+2
+00:00:00,000 --> 00:00:02,000
+we can use the SSH command,
+
+3
+00:00:02,000 --> 00:00:04,000
+so I opened Windows PowerShell
+
+4
+00:00:04,000 --> 00:00:07,000
+and I typed SSH and if you see this,
+
+5
+00:00:07,000 --> 00:00:08,000
+that means that it's available.
+
+6
+00:00:08,000 --> 00:00:10,000
+Otherwise, you can also use the command prompt
+
+7
+00:00:10,000 --> 00:00:12,000
+and do SSH and if you see this,
+
+8
+00:00:12,000 --> 00:00:13,000
+that means the command is available.
+
+9
+00:00:13,000 --> 00:00:18,000
+If you don't see the SSH command on your Windows,
+
+10
+00:00:18,000 --> 00:00:20,000
+that means that you don't have it and therefore,
+
+11
+00:00:20,000 --> 00:00:22,000
+you must use the patching method I
+
+12
+00:00:22,000 --> 00:00:24,000
+just showed in the previous lecture.
+
+13
+00:00:24,000 --> 00:00:26,000
+In my instance, I'm just going to use PowerShell
+
+14
+00:00:26,000 --> 00:00:29,000
+to do these exercises, okay?
+
+15
+00:00:29,000 --> 00:00:30,000
+So, next what I have to do
+
+16
+00:00:30,000 --> 00:00:34,000
+is to actually run this SSH command.
+
+17
+00:00:34,000 --> 00:00:35,000
+So the first thing I have to do is to be
+
+18
+00:00:35,000 --> 00:00:39,000
+in the directory of where my pem file is.
+
+19
+00:00:39,000 --> 00:00:42,000
+So right now, I'm in C:\users\stephanemaarek and I do ls,
+
+20
+00:00:42,000 --> 00:00:45,000
+and as you can see, well, I don't have my pem file
+
+21
+00:00:45,000 --> 00:00:47,000
+because it's under, for me, under desktop.
+
+22
+00:00:47,000 --> 00:00:51,000
+So I do cd.\Desktop to just change directory,
+
+23
+00:00:51,000 --> 00:00:53,000
+I clear my screen then I do ls again
+
+24
+00:00:53,000 --> 00:00:56,000
+and I can see my EC2Tutorial.pem file
+
+25
+00:00:56,000 --> 00:00:58,000
+which is the one I downloaded,
+
+26
+00:00:58,000 --> 00:01:01,000
+as well as the ppk file but this is not relevant,
+
+27
+00:01:01,000 --> 00:01:02,000
+if you don't have it, it is fine,
+
+28
+00:01:02,000 --> 00:01:04,000
+this is only if you want to use PuTTY.
+
+29
+00:01:04,000 --> 00:01:06,000
+The only file that is of relevance for us
+
+30
+00:01:06,000 --> 00:01:08,000
+is the EC2 tutorial.pem file.
+
+31
+00:01:08,000 --> 00:01:10,000
+Okay, so we need to make sure that
+
+32
+00:01:10,000 --> 00:01:12,000
+on the security group of course we have
+
+33
+00:01:12,000 --> 00:01:15,000
+the port 22 open for SSH, which we do
+
+34
+00:01:16,000 --> 00:01:19,000
+and next we need to enter our SSH command.
+
+35
+00:01:19,000 --> 00:01:20,000
+So for this, it is very similar
+
+36
+00:01:20,000 --> 00:01:24,000
+to the one we have on Mac, so we do SSH minus I
+
+37
+00:01:24,000 --> 00:01:28,000
+then you pass in the name of the tutorial file.
+
+38
+00:01:28,000 --> 00:01:33,000
+So I did to get this, I did EC2 and then I press tab
+
+39
+00:01:34,000 --> 00:01:38,000
+and I get auto suggested the EC2Tutorial.pem file.
+
+40
+00:01:38,000 --> 00:01:42,000
+I press tab again, I can switch between ppk and pem.
+
+41
+00:01:42,000 --> 00:01:46,000
+Okay so, by pressing tab, I get the autocomplete of this,
+
+42
+00:01:46,000 --> 00:01:48,000
+so I do SSH minus I or you can just type this,
+
+43
+00:01:50,000 --> 00:01:54,000
+EC2Tutorial.pem and then when to type EC2 minus user at
+
+44
+00:01:54,000 --> 00:01:58,000
+and at, well, the public IP of my EC2 instance
+
+45
+00:01:58,000 --> 00:02:02,000
+which is right here, so I copy and paste it.
+
+46
+00:02:02,000 --> 00:02:04,000
+So now this command is saying,
+
+47
+00:02:04,000 --> 00:02:08,000
+please enter this IP using this user,
+
+48
+00:02:08,000 --> 00:02:10,000
+the EC2 user which is the one we have
+
+49
+00:02:10,000 --> 00:02:13,000
+because we use Amazon next to using
+
+50
+00:02:13,000 --> 00:02:15,000
+this key right here, so let's press enter.
+
+51
+00:02:18,000 --> 00:02:19,000
+And it says, well, the authenticity
+
+52
+00:02:19,000 --> 00:02:21,000
+of the host cannot be trusted,
+
+53
+00:02:21,000 --> 00:02:22,000
+do you want to continue?
+
+54
+00:02:22,000 --> 00:02:26,000
+You say, yes and we are in the machine.
+
+55
+00:02:26,000 --> 00:02:29,000
+So sometimes you will get permission issues.
+
+56
+00:02:29,000 --> 00:02:31,000
+So sometimes the permissions will not be happy
+
+57
+00:02:31,000 --> 00:02:33,000
+and I will show you how to fix them.
+
+58
+00:02:33,000 --> 00:02:36,000
+So first let's exit this and clear the screen.
+
+59
+00:02:36,000 --> 00:02:38,000
+So in case you get a permission issue
+
+60
+00:02:38,000 --> 00:02:40,000
+when running this command,
+
+61
+00:02:40,000 --> 00:02:42,000
+what you have to do is to find your keys,
+
+62
+00:02:42,000 --> 00:02:44,000
+so for me, it's in my desktop.
+
+63
+00:02:44,000 --> 00:02:45,000
+You right click on your pem file,
+
+64
+00:02:45,000 --> 00:02:48,000
+you do properties, you go to the security tab
+
+65
+00:02:48,000 --> 00:02:51,000
+and this is where we're going to change permissions.
+
+66
+00:02:51,000 --> 00:02:54,000
+To do so, we're going to do advanced
+
+67
+00:02:54,000 --> 00:02:55,000
+and the first thing you need to make sure of
+
+68
+00:02:55,000 --> 00:02:58,000
+is that the owner of this file is yourself.
+
+69
+00:02:58,000 --> 00:03:02,000
+So it's working for me, but you can just click on change
+
+70
+00:03:02,000 --> 00:03:05,000
+and then for object types, you can find yourself,
+
+71
+00:03:05,000 --> 00:03:07,000
+locations make sure it's on your computer
+
+72
+00:03:07,000 --> 00:03:09,000
+and then type the object name.
+
+73
+00:03:09,000 --> 00:03:10,000
+So it would be for me, Stefan
+
+74
+00:03:10,000 --> 00:03:13,000
+but I'm already an owner so just type your name
+
+75
+00:03:13,000 --> 00:03:16,000
+and then you can be an owner of this file.
+
+76
+00:03:16,000 --> 00:03:19,000
+The owner is also indicated in here,
+
+77
+00:03:19,000 --> 00:03:21,000
+in your app permission entries.
+
+78
+00:03:21,000 --> 00:03:22,000
+The second thing you have to do
+
+79
+00:03:22,000 --> 00:03:24,000
+is just remove these entities,
+
+80
+00:03:24,000 --> 00:03:29,000
+so system and administrator don't need to have access to it
+
+81
+00:03:29,000 --> 00:03:30,000
+and we need to disable inheritance.
+
+82
+00:03:30,000 --> 00:03:33,000
+So first let's disable inheritance, for this,
+
+83
+00:03:33,000 --> 00:03:36,000
+we're going to remove all inherited permissions
+
+84
+00:03:36,000 --> 00:03:38,000
+from this object.
+
+85
+00:03:38,000 --> 00:03:40,000
+And then in here, I just select the principal
+
+86
+00:03:40,000 --> 00:03:45,000
+so myself, I just go enter Stephan Maarek.
+
+87
+00:03:46,000 --> 00:03:50,000
+So as we can see, I did Stephan Maarek in here,
+
+88
+00:03:50,000 --> 00:03:54,000
+check names and this entered my principal name
+
+89
+00:03:54,000 --> 00:03:58,000
+and we are going to give myself full control over this,
+
+90
+00:03:58,000 --> 00:03:59,000
+press okay.
+
+91
+00:03:59,000 --> 00:04:02,000
+So now the owner is myself and the principal
+
+92
+00:04:02,000 --> 00:04:05,000
+that owns that file is myself as well.
+
+93
+00:04:05,000 --> 00:04:07,000
+We do okay and okay,
+
+94
+00:04:07,000 --> 00:04:08,000
+so if I right click again on this file
+
+95
+00:04:08,000 --> 00:04:11,000
+and do properties under security now,
+
+96
+00:04:11,000 --> 00:04:15,000
+I only see myself, Stefan Maarek with full permission.
+
+97
+00:04:16,000 --> 00:04:18,000
+And then if you have that
+
+98
+00:04:18,000 --> 00:04:19,000
+and you do this command again
+
+99
+00:04:19,000 --> 00:04:23,000
+for sure you will not have any permission issues
+
+100
+00:04:23,000 --> 00:04:25,000
+and you will not be prompted with a yes,
+
+101
+00:04:25,000 --> 00:04:27,000
+no question ever again.
+
+102
+00:04:27,000 --> 00:04:30,000
+And if you wanted to, you could try this command,
+
+103
+00:04:30,000 --> 00:04:33,000
+so let's exit this and we can, for example,
+
+104
+00:04:33,000 --> 00:04:36,000
+open the command prompt, go to my desktop.
+
+105
+00:04:36,000 --> 00:04:39,000
+Again, if you don't go to desktop, it will not work
+
+106
+00:04:39,000 --> 00:04:41,000
+and then paste in this command and it will work,
+
+107
+00:04:41,000 --> 00:04:45,000
+as well you can do an SSH from the command prompt.
+
+108
+00:04:45,000 --> 00:04:48,000
+So we've successfully seen how to SSH
+
+109
+00:04:48,000 --> 00:04:52,000
+onto our EC2 instance directly from Windows to exit,
+
+110
+00:04:52,000 --> 00:04:55,000
+you can just type exit or do Control + D
+
+111
+00:04:55,000 --> 00:04:56,000
+and we're good to go.
+
+112
+00:04:56,000 --> 00:04:58,000
+And now we can get started with this course,
+
+113
+00:04:58,000 --> 00:04:59,000
+I hope you liked it.
+
+114
+00:04:59,000 --> 00:05:01,000
+And I will see you in the next lecture.
+

@@ -1,0 +1,176 @@
+1
+00:00:01,000 --> 00:00:03,000
+Okay so we are going to install
+
+2
+00:00:03,000 --> 00:00:04,000
+the aws command line on Windows.
+
+3
+00:00:04,000 --> 00:00:08,000
+So for this we do aws CLI install windows on Google.
+
+4
+00:00:08,000 --> 00:00:10,000
+And this will give us the list link
+
+5
+00:00:10,000 --> 00:00:13,000
+and we want to install the aws-cli version 2 on Windows.
+
+6
+00:00:13,000 --> 00:00:16,000
+Okay this is the latest and so we'll up to dates.
+
+7
+00:00:16,000 --> 00:00:18,000
+It doesn't change much versus version 1,
+
+8
+00:00:18,000 --> 00:00:22,000
+it is just some improved performance and capability,
+
+9
+00:00:22,000 --> 00:00:23,000
+but the API's exactly the same
+
+10
+00:00:23,000 --> 00:00:26,000
+and there's also an improved installer.
+
+11
+00:00:26,000 --> 00:00:28,000
+So I'm going to scroll down,
+
+12
+00:00:28,000 --> 00:00:30,000
+in here and to Install on Windows
+
+13
+00:00:30,000 --> 00:00:32,000
+where you can just simply
+
+14
+00:00:33,000 --> 00:00:35,000
+install it using the MSI installer,
+
+15
+00:00:35,000 --> 00:00:40,000
+so I just click on this link to download the MSI installer.
+
+16
+00:00:40,000 --> 00:00:42,000
+then I'm going to run the installer
+
+17
+00:00:42,000 --> 00:00:44,000
+so it should very very simple.
+
+18
+00:00:44,000 --> 00:00:46,000
+Now the installer is starting,
+
+19
+00:00:46,000 --> 00:00:47,000
+I click on Next.
+
+20
+00:00:47,000 --> 00:00:49,000
+I accept the terms of the license,
+
+21
+00:00:49,000 --> 00:00:50,000
+click on Next,
+
+22
+00:00:50,000 --> 00:00:53,000
+Install and then we wait for the installer to be done.
+
+23
+00:00:53,000 --> 00:00:57,000
+Yes, I want to allow whatever this is doing.
+
+24
+00:00:57,000 --> 00:00:59,000
+Okay so the installer is now complete.
+
+25
+00:00:59,000 --> 00:01:01,000
+I click on Finish
+
+26
+00:01:01,000 --> 00:01:04,000
+and now I can go ahead and open a command line,
+
+27
+00:01:04,000 --> 00:01:05,000
+so I'll do command line,
+
+28
+00:01:05,000 --> 00:01:08,000
+Command Prompt here we go on Windows,
+
+29
+00:01:08,000 --> 00:01:10,000
+and to be sure that it's fully installed
+
+30
+00:01:10,000 --> 00:01:12,000
+I just type aws--version
+
+31
+00:01:14,000 --> 00:01:15,000
+and press enter,
+
+32
+00:01:15,000 --> 00:01:17,000
+and if you get a result like this:
+
+33
+00:01:17,000 --> 00:01:20,000
+aws-cli, a version that starts with a 2,
+
+34
+00:01:20,000 --> 00:01:22,000
+then Python, Windows,
+
+35
+00:01:22,000 --> 00:01:23,000
+that means that your aws-cli
+
+36
+00:01:23,000 --> 00:01:25,000
+is now properly installed on Windows
+
+37
+00:01:25,000 --> 00:01:27,000
+and you're good to go.
+
+38
+00:01:27,000 --> 00:01:31,000
+Finally just note that if you want to upgrade your aws-cli
+
+39
+00:01:31,000 --> 00:01:34,000
+then you just need to re-download that MSI installer
+
+40
+00:01:34,000 --> 00:01:36,000
+and just re-run the install
+
+41
+00:01:36,000 --> 00:01:39,000
+and it will be automatically upgraded.
+
+42
+00:01:39,000 --> 00:01:41,000
+But as soon as you have this output you're good to go
+
+43
+00:01:41,000 --> 00:01:42,000
+and you can follow me in the next lecture.
+
+44
+00:01:42,000 --> 00:01:44,000
+So see you in the next lecture.
+

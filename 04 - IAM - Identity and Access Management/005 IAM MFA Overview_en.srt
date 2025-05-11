@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:02,000
+Now that we have created users in groups,
+
+2
+00:00:02,000 --> 00:00:04,000
+it is time for us to protect these users
+
+3
+00:00:04,000 --> 00:00:06,000
+in groups from being compromised.
+
+4
+00:00:06,000 --> 00:00:09,000
+So for this, we have two defense mechanisms.
+
+5
+00:00:09,000 --> 00:00:10,000
+The first one is to define
+
+6
+00:00:10,000 --> 00:00:12,000
+what's called a password policy.
+
+7
+00:00:12,000 --> 00:00:13,000
+Why?
+
+8
+00:00:13,000 --> 00:00:15,000
+Well, because the stronger the password you use,
+
+9
+00:00:15,000 --> 00:00:17,000
+the more security for your accounts.
+
+10
+00:00:17,000 --> 00:00:20,000
+So in AWS you can set up a password policy
+
+11
+00:00:20,000 --> 00:00:22,000
+with different options.
+
+12
+00:00:22,000 --> 00:00:24,000
+The first one is you can set a minimum
+
+13
+00:00:24,000 --> 00:00:25,000
+password length and you can
+
+14
+00:00:25,000 --> 00:00:28,000
+require specific character types.
+
+15
+00:00:28,000 --> 00:00:29,000
+For example, you may want
+
+16
+00:00:29,000 --> 00:00:32,000
+to have an uppercase letter, lowercase letter,
+
+17
+00:00:32,000 --> 00:00:34,000
+number, non alphanumeric characters,
+
+18
+00:00:34,000 --> 00:00:37,000
+for example, a question mark and so on.
+
+19
+00:00:37,000 --> 00:00:39,000
+Then you can allow or not IAM users
+
+20
+00:00:39,000 --> 00:00:41,000
+to change their own passwords,
+
+21
+00:00:41,000 --> 00:00:43,000
+or you can require users to change their password
+
+22
+00:00:43,000 --> 00:00:45,000
+after some time to make your password expired,
+
+23
+00:00:45,000 --> 00:00:47,000
+for example, to say every 90 days,
+
+24
+00:00:47,000 --> 00:00:50,000
+users have to change their passwords.
+
+25
+00:00:50,000 --> 00:00:52,000
+Finally, you can also prevent password reuse
+
+26
+00:00:52,000 --> 00:00:54,000
+so that users, when they change their passwords,
+
+27
+00:00:54,000 --> 00:00:55,000
+don't change it to the one
+
+28
+00:00:55,000 --> 00:00:57,000
+that they already have or change it
+
+29
+00:00:57,000 --> 00:00:59,000
+to the one they had before.
+
+30
+00:00:59,000 --> 00:01:00,000
+So this is great.
+
+31
+00:01:00,000 --> 00:01:02,000
+A password policy really is helpful
+
+32
+00:01:02,000 --> 00:01:05,000
+against brute force attacks on your account.
+
+33
+00:01:05,000 --> 00:01:07,000
+But there's a second defense mechanism
+
+34
+00:01:07,000 --> 00:01:09,000
+that you need to know going into the exam.
+
+35
+00:01:09,000 --> 00:01:13,000
+And this is the Multi-Factor Authentication or MFA.
+
+36
+00:01:13,000 --> 00:01:15,000
+It is possible, you already used it
+
+37
+00:01:15,000 --> 00:01:18,000
+on some websites, but on AWS it's a must
+
+38
+00:01:18,000 --> 00:01:20,000
+and it's very recommended to use it.
+
+39
+00:01:20,000 --> 00:01:23,000
+So users have access to your account
+
+40
+00:01:23,000 --> 00:01:25,000
+and they can possibly do a lot of things,
+
+41
+00:01:25,000 --> 00:01:27,000
+especially if they're administrators.
+
+42
+00:01:27,000 --> 00:01:29,000
+They can change configuration,
+
+43
+00:01:29,000 --> 00:01:32,000
+delete resources and other things.
+
+44
+00:01:32,000 --> 00:01:34,000
+So you absolutely want to protect
+
+45
+00:01:34,000 --> 00:01:38,000
+at least your root account and hopefully,
+
+46
+00:01:38,000 --> 00:01:39,000
+all your IAM users.
+
+47
+00:01:39,000 --> 00:01:42,000
+So how do we protect them on top of the password?
+
+48
+00:01:42,000 --> 00:01:44,000
+Well, you use an MFA device.
+
+49
+00:01:44,000 --> 00:01:45,000
+So what is MFA?
+
+50
+00:01:45,000 --> 00:01:49,000
+MFA is using the combination of a password
+
+51
+00:01:49,000 --> 00:01:53,000
+that you know and a security device that you own.
+
+52
+00:01:53,000 --> 00:01:55,000
+And these two things together
+
+53
+00:01:55,000 --> 00:01:57,000
+have a much greater security
+
+54
+00:01:57,000 --> 00:01:58,000
+than just a password.
+
+55
+00:01:58,000 --> 00:02:00,000
+So for example, let's take Alice.
+
+56
+00:02:00,000 --> 00:02:02,000
+Alice knows her password,
+
+57
+00:02:02,000 --> 00:02:05,000
+but she also has an MFA generating token.
+
+58
+00:02:05,000 --> 00:02:07,000
+And by using these things together
+
+59
+00:02:07,000 --> 00:02:09,000
+while logging in, she's going to be able
+
+60
+00:02:09,000 --> 00:02:12,000
+to do a successful login on MFA.
+
+61
+00:02:12,000 --> 00:02:15,000
+So the benefit of MFA is that even if Alice
+
+62
+00:02:15,000 --> 00:02:17,000
+has lost her password
+
+63
+00:02:17,000 --> 00:02:19,000
+because it's stolen or it's hacked,
+
+64
+00:02:19,000 --> 00:02:21,000
+the account will not be compromised
+
+65
+00:02:21,000 --> 00:02:23,000
+because the hacker will need to also get a hold
+
+66
+00:02:23,000 --> 00:02:25,000
+of the physical device of Alice,
+
+67
+00:02:25,000 --> 00:02:27,000
+that could be her phone, for example,
+
+68
+00:02:27,000 --> 00:02:28,000
+to do a login.
+
+69
+00:02:28,000 --> 00:02:31,000
+Obviously that is much less likely.
+
+70
+00:02:31,000 --> 00:02:35,000
+So what are the MFA devices option in AWS?
+
+71
+00:02:35,000 --> 00:02:37,000
+And you need to know them going into the exam,
+
+72
+00:02:37,000 --> 00:02:39,000
+but don't worry, they're quite simple.
+
+73
+00:02:39,000 --> 00:02:41,000
+The first one is a virtual MFA device.
+
+74
+00:02:41,000 --> 00:02:43,000
+This is what we'll be using in the hands-on.
+
+75
+00:02:43,000 --> 00:02:45,000
+And so you can use Google Authenticator,
+
+76
+00:02:45,000 --> 00:02:48,000
+which is just working on one phone at a time,
+
+77
+00:02:48,000 --> 00:02:50,000
+or using Authy.
+
+78
+00:02:50,000 --> 00:02:52,000
+So for Authy, you have support
+
+79
+00:02:52,000 --> 00:02:55,000
+for multiple tokens on a single device.
+
+80
+00:02:55,000 --> 00:02:58,000
+So that means that with the virtual MFA device,
+
+81
+00:02:58,000 --> 00:02:59,000
+you can have your root account,
+
+82
+00:02:59,000 --> 00:03:02,000
+your IAM user, another account, another IAM user.
+
+83
+00:03:02,000 --> 00:03:04,000
+It's up to you.
+
+84
+00:03:04,000 --> 00:03:04,000
+You can have as many users and accounts
+
+85
+00:03:04,000 --> 00:03:07,000
+as you want on your virtual MFA device,
+
+86
+00:03:07,000 --> 00:03:10,000
+which make it a very easy solution to use.
+
+87
+00:03:10,000 --> 00:03:11,000
+Now we have another thing
+
+88
+00:03:11,000 --> 00:03:13,000
+called a Universal 2nd Factor
+
+89
+00:03:13,000 --> 00:03:15,000
+or U2F Security Key,
+
+90
+00:03:15,000 --> 00:03:17,000
+and that is a physical device.
+
+91
+00:03:17,000 --> 00:03:19,000
+For example, a YubiKey by Yubico
+
+92
+00:03:19,000 --> 00:03:21,000
+and Yubico is a third party to AWS.
+
+93
+00:03:21,000 --> 00:03:23,000
+This is not AWS that provides it.
+
+94
+00:03:23,000 --> 00:03:25,000
+This is a third party.
+
+95
+00:03:25,000 --> 00:03:27,000
+And we use a physical device
+
+96
+00:03:27,000 --> 00:03:28,000
+because maybe it's super easy,
+
+97
+00:03:28,000 --> 00:03:30,000
+you put it on your key fobs
+
+98
+00:03:30,000 --> 00:03:31,000
+and you're good to go.
+
+99
+00:03:31,000 --> 00:03:34,000
+So this YubiKey supports multiple root
+
+100
+00:03:34,000 --> 00:03:36,000
+and IAM users using a single security key.
+
+101
+00:03:36,000 --> 00:03:38,000
+So you don't need as many keys as users,
+
+102
+00:03:38,000 --> 00:03:40,000
+otherwise there will be a nightmare.
+
+103
+00:03:40,000 --> 00:03:41,000
+Then you have other options.
+
+104
+00:03:41,000 --> 00:03:44,000
+You have a hardware key fob MFA device,
+
+105
+00:03:44,000 --> 00:03:45,000
+for example, this one provided by Gemalto,
+
+106
+00:03:45,000 --> 00:03:49,000
+which is also a third party to AWS.
+
+107
+00:03:49,000 --> 00:03:52,000
+And finally, if you are using the cloud
+
+108
+00:03:52,000 --> 00:03:56,000
+of the government in the US, the AWS GovCloud,
+
+109
+00:03:56,000 --> 00:03:58,000
+then you have a special key fob
+
+110
+00:03:58,000 --> 00:03:58,000
+that looks like this
+
+111
+00:03:58,000 --> 00:04:01,000
+that is provided by SurePassID,
+
+112
+00:04:01,000 --> 00:04:02,000
+which is also a third party.
+
+113
+00:04:02,000 --> 00:04:03,000
+So that's it.
+
+114
+00:04:03,000 --> 00:04:04,000
+We've seen the theory
+
+115
+00:04:04,000 --> 00:04:05,000
+on how to protect your account,
+
+116
+00:04:05,000 --> 00:04:06,000
+but let's go in the next lecture
+
+117
+00:04:06,000 --> 00:04:07,000
+to implement that.
+
+118
+00:04:07,000 --> 00:04:09,000
+So I will see you in the next lecture.
+
